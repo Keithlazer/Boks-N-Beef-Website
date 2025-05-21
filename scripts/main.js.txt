@@ -1,0 +1,27 @@
+// Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle (would need additional HTML/JS for full functionality)
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            // This would toggle a mobile menu - implementation depends on your preferred approach
+            console.log('Mobile menu clicked - implement toggle functionality');
+        });
+    </script>
