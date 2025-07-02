@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoksNBeef | Artisanal Quality Meats</title>
-    <meta name="description" content="BoksNBeef - Premium Grass-Fed Beef & Sustainable Cattle Farming. Experience artisanal quality meats from ethical sources.">
+    <title>BoksNBeef | Premium Cattle & Artisanal Beef</title>
+    <meta name="description" content="BoksNBeef - Premium Cattle Breeding & Artisanal Beef Products. Quality bulls, heifers, and sustainably sourced beef.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Original Global Styles */
         :root {
             --primary-color: #8B0000;
             --secondary-color: #333333;
@@ -18,6 +17,7 @@
             --gold-accent: #D4AF37;
             --text-color: #333;
             --light-text: #777;
+            --farm-green: #2E8B57;
         }
 
         * {
@@ -79,6 +79,14 @@
         .btn-outline:hover {
             background: var(--primary-color);
             color: white;
+        }
+
+        .btn-green {
+            background: var(--farm-green);
+        }
+
+        .btn-green:hover {
+            background: #267349;
         }
 
         section {
@@ -210,8 +218,9 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1471194402529-8e0f5a675de6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-position: center;
+            background-size: cover;
             background-attachment: fixed;
             height: 100vh;
             min-height: 700px;
@@ -247,6 +256,7 @@
             display: flex;
             gap: 20px;
             justify-content: center;
+            margin-top: 30px;
         }
 
         /* Products Section */
@@ -319,6 +329,92 @@
             margin-bottom: 20px;
         }
 
+        /* Cattle Section */
+        .cattle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .cattle-card {
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .cattle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .cattle-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--farm-green);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .cattle-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .cattle-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .cattle-info {
+            padding: 25px;
+        }
+
+        .cattle-card h3 {
+            color: var(--farm-green);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .cattle-card p {
+            color: var(--light-text);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .cattle-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 10px;
+            flex: 1;
+        }
+
+        .stat-value {
+            font-weight: bold;
+            color: var(--farm-green);
+            font-size: 1.2rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--light-text);
+        }
+
         /* About Section */
         .about .container {
             display: flex;
@@ -386,6 +482,39 @@
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: var(--primary-color);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
 
         /* Testimonials Section */
@@ -675,6 +804,38 @@
             }
         }
 
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        .tab-btn {
+            padding: 15px 30px;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         /* Responsive Styles */
         @media (max-width: 1200px) {
             h2 {
@@ -750,6 +911,16 @@
             .logo-text h1 {
                 font-size: 1.5rem;
             }
+
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -761,7 +932,8 @@
                 font-size: 1rem;
             }
             
-            .product-grid {
+            .product-grid,
+            .cattle-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -821,67 +993,6 @@
             100% { width: 0; left: 100%; }
         }
 
-        .meat-thermometer {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 30px auto;
-            max-width: 500px;
-        }
-
-        .temp-bars {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-
-        .temp {
-            padding: 8px 15px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .temp.active {
-            background: var(--gold-accent);
-            color: var(--primary-color);
-        }
-
-        .quiz-section {
-            background: var(--light-cream);
-            padding: 80px 0;
-        }
-
-        .quiz-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .quiz-options {
-            display: grid;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .quiz-btn {
-            padding: 15px 25px;
-            border: 2px solid var(--primary-color);
-            border-radius: 5px;
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .quiz-btn:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
         .sizzle-btn {
             animation: sizzle 1.5s infinite;
             position: relative;
@@ -922,18 +1033,19 @@
     <header id="header">
         <div class="container">
             <div class="logo">
-                <img src="assets/Mabhena Meats_20250216_141250_0000_page-0001.jpg" alt="BoksNBeef Logo">
+                <img src="assets/Mabhena_Meats_20250216_141250_0000_page-0001.jpg" alt="BoksNBeef Logo">
                 <div class="logo-text">
                     <h1>Boks N' Beef</h1>
-                    <p>More than just Meat</p>
+                    <p>Premium Cattle & Artisanal Beef</p>
                 </div>
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
+                    <li><a href="#cattle">Cattle</a></li>
+                    <li><a href="#beef">Beef</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="mobile-menu">
@@ -946,28 +1058,102 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Exquisite Beef Crafted With Passion</h1>
-            <p>Discover our premium selection of hand-selected, dry-aged beef from the finest farms</p>
-            <div class="meat-thermometer">
-                <div class="temp-label">Doneness Meter:</div>
-                <div class="temp-bars">
-                    <div class="temp rare active" data-temp="rare">Rare</div>
-                    <div class="temp medium-rare" data-temp="medium-rare">Med-Rare</div>
-                    <div class="temp medium" data-temp="medium">Medium</div>
-                </div>
-            </div>
+            <h1>Premium Cattle & Exceptional Beef</h1>
+            <p>Breeding excellence in livestock and crafting the finest beef products</p>
             <div class="hero-btns">
-                <a href="#products" class="btn sizzle-btn">Explore Cuts <i class="fas fa-fire"></i></a>
-                <a href="#quiz" class="btn btn-outline">Find Your Perfect Cut <i class="fas fa-search"></i></a>
+                <a href="#cattle" class="btn btn-green">Explore Our Cattle</a>
+                <a href="#beef" class="btn sizzle-btn">Discover Our Beef</a>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
+    <!-- Cattle Section -->
+    <section class="cattle" id="cattle">
         <div class="container">
-            <h2>Our Premium Selection</h2>
-            <p class="section-subtitle">Each cut is carefully selected and aged to perfection for unmatched flavor and tenderness</p>
+            <h2>Premium Cattle Selection</h2>
+            <p class="section-subtitle">Top-quality breeding stock for your farm or ranch</p>
+            
+            <div class="cattle-grid">
+                <div class="cattle-card">
+                    <span class="cattle-badge">Breeding Bull</span>
+                    <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Brahman Bull">
+                    <div class="cattle-info">
+                        <h3>Brahman Bull</h3>
+                        <p>Premium genetics with excellent heat tolerance and adaptability</p>
+                        <div class="cattle-stats">
+                            <div class="stat">
+                                <div class="stat-value">4 Years</div>
+                                <div class="stat-label">Age</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">850kg</div>
+                                <div class="stat-label">Weight</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">98%</div>
+                                <div class="stat-label">Health</div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-green">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="cattle-card">
+                    <span class="cattle-badge">Heifer</span>
+                    <img src="https://images.unsplash.com/photo-1552767059-ce182ead6c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Angus Heifer">
+                    <div class="cattle-info">
+                        <h3>Angus Heifer</h3>
+                        <p>Excellent maternal qualities with superior marbling genetics</p>
+                        <div class="cattle-stats">
+                            <div class="stat">
+                                <div class="stat-value">18 Months</div>
+                                <div class="stat-label">Age</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">450kg</div>
+                                <div class="stat-label">Weight</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">100%</div>
+                                <div class="stat-label">Health</div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-green">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="cattle-card">
+                    <span class="cattle-badge">Steer</span>
+                    <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hereford Steer">
+                    <div class="cattle-info">
+                        <h3>Hereford Steer</h3>
+                        <p>Hardy, efficient grazer with excellent feed conversion</p>
+                        <div class="cattle-stats">
+                            <div class="stat">
+                                <div class="stat-value">20 Months</div>
+                                <div class="stat-label">Age</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">600kg</div>
+                                <div class="stat-label">Weight</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">97%</div>
+                                <div class="stat-label">Health</div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-green">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beef Products Section -->
+    <section class="beef" id="beef">
+        <div class="container">
+            <h2>Artisanal Beef Products</h2>
+            <p class="section-subtitle">Premium cuts from our ethically raised cattle</p>
             
             <div class="product-grid">
                 <div class="product-card">
@@ -977,7 +1163,7 @@
                         <h3>Dry-Aged Ribeye</h3>
                         <p>28-day dry-aged, well-marbled for exceptional flavor</p>
                         <span class="price">$42.99/Kg</span>
-                        <a href="#" class="btn">Order Now</a>
+                        <a href="#contact" class="btn">Order Now</a>
                     </div>
                 </div>
                 
@@ -987,7 +1173,7 @@
                         <h3>Beef Tenderloin</h3>
                         <p>The most tender cut, perfect for special occasions</p>
                         <span class="price">$49.99/Kg</span>
-                        <a href="#" class="btn">Order Now</a>
+                        <a href="#contact" class="btn">Order Now</a>
                     </div>
                 </div>
                 
@@ -995,11 +1181,45 @@
                     <span class="product-badge">New</span>
                     <img src="https://images.unsplash.com/photo-1606755456206-b25206b30b3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Wagyu Beef">
                     <div class="product-info">
-                        <h3>Japanese A5 Wagyu</h3>
-                        <p>Imported from Japan, the pinnacle of marbling</p>
-                        <span class="price">$129.99/Kg</span>
-                        <a href="#" class="btn">Order Now</a>
+                        <h3>Premium Ground Beef</h3>
+                        <p>80/20 blend perfect for burgers and meat sauces</p>
+                        <span class="price">$24.99/Kg</span>
+                        <a href="#contact" class="btn">Order Now</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="section-subtitle">Comprehensive solutions for cattle farmers and beef enthusiasts</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3>Breeding & Insemination</h3>
+                    <p>Professional artificial insemination services with premium genetics from top bloodlines.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Farm Consultations</h3>
+                    <p>Expert advice on herd management, nutrition, and sustainable farming practices.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Delivery Services</h3>
+                    <p>Reliable transportation for both live cattle and packaged beef products.</p>
                 </div>
             </div>
         </div>
@@ -1009,35 +1229,35 @@
     <section class="about" id="about">
         <div class="container">
             <h2>Our Heritage</h2>
-            <p class="section-subtitle">Generations of passion for premium quality beef</p>
+            <p class="section-subtitle">Bridging superior cattle breeding with premium beef production</p>
             
             <div class="container">
                 <div class="about-content">
-                    <p>Founded in 2024, BoksNBeef. has been dedicated to sourcing the finest quality beef from  their own trusted local farms that share our commitment to ethical and sustainable practices.</p>
-                    <p>Our master butchers bring decades of experience to carefully select and hand-cut each piece, ensuring only the best reaches your table. We specialize in dry-aging, a traditional process that enhances flavor and tenderness.</p>
-                    <p>What sets us apart is our uncompromising standards - from pasture to plate, every step is meticulously controlled to deliver an exceptional dining experience.</p>
+                    <p>Founded in 2024, BoksNBeef combines generations of ranching expertise with modern meat science. We operate a vertically integrated operation where we control every aspect from breeding to processing.</p>
+                    <p>Our breeding program focuses on developing cattle with superior genetics for both meat quality and robust health. We carefully select bulls and heifers based on performance data, EPDs, and conformation.</p>
+                    <p>For our beef products, we implement a 28-45 day dry-aging process that enhances flavor and tenderness, ensuring only the highest quality reaches your table.</p>
                     
                     <div class="features">
                         <div class="feature">
-                            <i class="fas fa-award"></i>
-                            <h4>Quality</h4>
-                            <p>Only USDA Prime or equivalent</p>
+                            <i class="fas fa-dna"></i>
+                            <h4>Genetics</h4>
+                            <p>Superior bloodlines with proven performance</p>
                         </div>
                         <div class="feature">
                             <i class="fas fa-leaf"></i>
                             <h4>Sustainability</h4>
-                            <p>Ethically sourced, grass-fed options</p>
+                            <p>Ethical grazing and regenerative practices</p>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-clock"></i>
-                            <h4>Aging</h4>
-                            <p>21-45 day dry-aged process</p>
+                            <i class="fas fa-award"></i>
+                            <h4>Quality</h4>
+                            <p>Consistent premium-grade beef</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1606755456206-b25206b30b3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Our Butcher Shop">
+                    <img src="https://images.unsplash.com/photo-1471194402529-8e0f5a675de6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Ranch">
                 </div>
             </div>
         </div>
@@ -1047,57 +1267,39 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <h2>What Our Clients Say</h2>
-            <p class="section-subtitle">Trusted by top restaurants and discerning home chefs</p>
+            <p class="section-subtitle">Trusted by farmers, ranchers, and top chefs</p>
             
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p>Can't get enough of his meat, call me. xoxo</p>
+                    <p>The Brahman bull I purchased from BoksNBeef has transformed my herd. His offspring show incredible growth rates and adaptability to our climate.</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael R.">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John D.">
                         <div class="author-info">
-                            <h4>MConstable Ngito.</h4>
-                            <p>Executive Chef, Le Grand Restaurant</p>
+                            <h4>John D.</h4>
+                            <p>Cattle Rancher</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <p>Nyama dzaGezi Hadziko Ndati.</p>
+                    <p>As a chef, I demand the best. BoksNBeef consistently delivers exceptional dry-aged beef with perfect marbling and flavor depth.</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Mai Angela ">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K.">
                         <div class="author-info">
-                            <h4>Mai Angela.</h4>
-                            <p>Home Chef</p>
+                            <h4>Sarah K.</h4>
+                            <p>Executive Chef</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <p>BoksNBeef's meat is simply extraordinary. The marbling is perfect and the flavor is unmatched. Worth every penny for special occasions or regular sittings.</p>
+                    <p>Their AI services helped us improve our herd genetics significantly. Professional, knowledgeable, and always available for consultation.</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="FuckMore Mabhena">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Robert M.">
                         <div class="author-info">
-                            <h4>Fuckmore Mabhena</h4>
-                            <p>Food Critic</p>
+                            <h4>Robert M.</h4>
+                            <p>Dairy Farmer</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quiz Section -->
-    <section class="quiz-section" id="quiz">
-        <div class="container">
-            <h2>Steak Selector Quiz</h2>
-            <p class="section-subtitle">Take our 30-second quiz to find your perfect cut</p>
-            <div class="quiz-container">
-                <div class="quiz-step active">
-                    <h3>How do you like your steak cooked?</h3>
-                    <div class="quiz-options">
-                        <button class="quiz-btn" data-answer="rare">Still mooing <i class="fas fa-cow"></i></button>
-                        <button class="quiz-btn" data-answer="medium-rare">Perfect pink <i class="fas fa-heart"></i></button>
-                        <button class="quiz-btn" data-answer="well-done">Well done (we won't judge!)</button>
                     </div>
                 </div>
             </div>
@@ -1108,7 +1310,13 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Get In Touch With Us</h2>
-            <p class="section-subtitle">We'd love to hear from you - whether you're a restaurant, retailer, or home chef</p>
+            <p class="section-subtitle">We'd love to discuss your cattle or beef needs</p>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="cattle-contact">Cattle Inquiry</button>
+                <button class="tab-btn" data-tab="beef-contact">Beef Products</button>
+                <button class="tab-btn" data-tab="services-contact">Services</button>
+            </div>
             
             <div class="contact-container">
                 <div class="contact-info">
@@ -1127,7 +1335,77 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm">
+                        <div class="tab-content active" id="cattle-contact">
+                            <div class="form-group">
+                                <label for="cattle-type">Cattle Type Interest</label>
+                                <select id="cattle-type" name="cattle-type" required>
+                                    <option value="">Select Type</option>
+                                    <option value="bull">Breeding Bull</option>
+                                    <option value="heifer">Heifer</option>
+                                    <option value="steer">Steer</option>
+                                    <option value="cow">Cow</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="breed">Preferred Breed</label>
+                                <input type="text" id="breed" name="breed" placeholder="Brahman, Angus, etc.">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="quantity">Quantity Needed</label>
+                                <input type="number" id="quantity" name="quantity" min="1">
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="beef-contact">
+                            <div class="form-group">
+                                <label for="product-interest">Product Interest</label>
+                                <select id="product-interest" name="product-interest">
+                                    <option value="">Select Product</option>
+                                    <option value="ribeye">Dry-Aged Ribeye</option>
+                                    <option value="tenderloin">Beef Tenderloin</option>
+                                    <option value="ground">Ground Beef</option>
+                                    <option value="other">Other Cuts</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="quantity-kg">Quantity (Kg)</label>
+                                <input type="number" id="quantity-kg" name="quantity-kg" min="1">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="delivery-date">Preferred Delivery Date</label>
+                                <input type="date" id="delivery-date" name="delivery-date">
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="services-contact">
+                            <div class="form-group">
+                                <label for="service-type">Service Needed</label>
+                                <select id="service-type" name="service-type">
+                                    <option value="">Select Service</option>
+                                    <option value="ai">Artificial Insemination</option>
+                                    <option value="consultation">Farm Consultation</option>
+                                    <option value="delivery">Transportation</option>
+                                    <option value="other">Other Service</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="herd-size">Herd Size</label>
+                                <input type="number" id="herd-size" name="herd-size" min="1">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="location">Farm Location</label>
+                                <input type="text" id="location" name="location">
+                            </div>
+                        </div>
+                        
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -1144,21 +1422,11 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <select id="subject" name="subject">
-                                <option value="general">General Inquiry</option>
-                                <option value="wholesale">Wholesale Inquiry</option>
-                                <option value="product">Product Questions</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn">Send Inquiry</button>
                     </form>
                 </div>
             </div>
@@ -1170,8 +1438,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>BoksNBeef </h3>
-                    <p>Generations of passion for premium quality beef. We source, age, and cut with care to bring you the finest dining experience.</p>
+                    <h3>BoksNBeef</h3>
+                    <p>Premium cattle breeding and artisanal beef production. Excellence from pasture to plate.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1183,9 +1451,9 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#cattle">Cattle</a></li>
+                        <li><a href="#beef">Beef Products</a></li>
+                        <li><a href="#services">Services</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -1193,17 +1461,17 @@
                 <div class="footer-column">
                     <h3>Information</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Returns & Refunds</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Breeding Program</a></li>
+                        <li><a href="#">Beef Aging Process</a></li>
+                        <li><a href="#">Farm Practices</a></li>
+                        <li><a href="#">Delivery Areas</a></li>
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Newsletter</h3>
-                    <p>Subscribe to receive updates, access to exclusive deals, and beef preparation tips.</p>
+                    <p>Subscribe for cattle market updates, beef specials, and farming tips.</p>
                     <form>
                         <input type="email" placeholder="Enter your email">
                         <button type="submit" class="btn">Subscribe</button>
@@ -1252,26 +1520,30 @@
             nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
         });
 
-        // Thermometer interaction
-        document.querySelectorAll('.temp').forEach(temp => {
-            temp.addEventListener('click', function() {
-                document.querySelectorAll('.temp').forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
+        // Contact form tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
             });
         });
 
-        // Quiz functionality
-        const quizSteps = document.querySelectorAll('.quiz-step');
-        let currentStep = 0;
-
-        document.querySelectorAll('.quiz-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                if(currentStep < quizSteps.length - 1) {
-                    quizSteps[currentStep].classList.remove('active');
-                    currentStep++;
-                    quizSteps[currentStep].classList.add('active');
-                }
-            });
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you shortly.');
+            this.reset();
         });
     </script>
 </body>
