@@ -5,1042 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoksNBeef | Premium Cattle & Artisanal Beef</title>
     <meta name="description" content="BoksNBeef - Premium Cattle Breeding & Artisanal Beef Products. Quality bulls, heifers, and sustainably sourced beef.">
+    <meta property="og:title" content="BoksNBeef | Premium Cattle & Artisanal Beef">
+    <meta property="og:description" content="Premium Cattle Breeding & Artisanal Beef Products. Quality bulls, heifers, and sustainably sourced beef.">
+    <meta property="og:image" content="assets/Mabhena_Meats_20250216_141250_0000_page-0001.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BoksNBeef | Premium Cattle & Artisanal Beef">
+    <meta name="twitter:description" content="Premium Cattle Breeding & Artisanal Beef Products. Quality bulls, heifers, and sustainably sourced beef.">
+    <meta name="twitter:image" content="assets/Mabhena_Meats_20250216_141250_0000_page-0001.jpg">
+    <link rel="icon" type="image/png" href="assets/Mabhena_Meats_20250216_141250_0000_page-0001.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #8B0000;
-            --secondary-color: #333333;
-            --cream-color: #F5F5DC;
-            --light-cream: #FFF8F0;
-            --dark-accent: #5A0000;
-            --gold-accent: #D4AF37;
-            --text-color: #333;
-            --light-text: #777;
-            --farm-green: #2E8B57;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.8;
-            color: var(--text-color);
-            background-color: var(--cream-color);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 12px 28px;
-            border: none;
-            border-radius: 2px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.4s ease;
-            box-shadow: 0 2px 10px rgba(139, 0, 0, 0.2);
-        }
-
-        .btn:hover {
-            background: var(--dark-accent);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .btn-green {
-            background: var(--farm-green);
-        }
-
-        .btn-green:hover {
-            background: #267349;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        h2 {
-            font-size: 2.8rem;
-            margin-bottom: 40px;
-            text-align: center;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        h2:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--gold-accent);
-            margin: 15px auto 0;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--light-text);
-            margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Fixed Header Logo Alignment */
-        header .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo img {
-            height: 60px;
-            width: auto;
-            margin-right: 0;
-        }
-
-        .logo-text h1 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            line-height: 1.2;
-            white-space: nowrap;
-        }
-
-        .logo-text p {
-            color: var(--secondary-color);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            margin-top: 3px;
-        }
-
-        /* Header Styles */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            padding: 10px 0;
-        }
-
-        header.scrolled {
-            background: rgba(245, 245, 220, 0.98);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            padding: 5px 0;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 35px;
-            position: relative;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 500;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav ul li a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s;
-        }
-
-        nav ul li a:hover:after {
-            width: 100%;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1471194402529-8e0f5a675de6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-position: center;
-            background-size: cover;
-            background-attachment: fixed;
-            height: 100vh;
-            min-height: 700px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            color: white;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        /* Products Section */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--gold-accent);
-            color: white;
-            padding: 5px 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 20px;
-            z-index: 1;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .product-info {
-            padding: 25px;
-        }
-
-        .product-card h3 {
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .product-card p {
-            color: var(--light-text);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .price {
-            display: block;
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: var(--dark-accent);
-            margin-bottom: 20px;
-        }
-
-        /* Cattle Section */
-        .cattle-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .cattle-card {
-            background: white;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .cattle-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .cattle-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--farm-green);
-            color: white;
-            padding: 5px 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 20px;
-            z-index: 1;
-        }
-
-        .cattle-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .cattle-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .cattle-info {
-            padding: 25px;
-        }
-
-        .cattle-card h3 {
-            color: var(--farm-green);
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .cattle-card p {
-            color: var(--light-text);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .cattle-stats {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 10px;
-            flex: 1;
-        }
-
-        .stat-value {
-            font-weight: bold;
-            color: var(--farm-green);
-            font-size: 1.2rem;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--light-text);
-        }
-
-        /* About Section */
-        .about .container {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .about-content {
-            flex: 1;
-        }
-
-        .about-content p {
-            margin-bottom: 25px;
-            color: var(--text-color);
-            font-size: 1.05rem;
-        }
-
-        .about-image {
-            flex: 1;
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 5px;
-            box-shadow: 20px 20px 0 rgba(139, 0, 0, 0.1);
-            transition: transform 0.5s;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.02);
-        }
-
-        .features {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 30px 20px;
-            border-radius: 5px;
-            background: white;
-            flex: 1;
-            min-width: 200px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature i {
-            font-size: 1.8rem;
-            color: var(--gold-accent);
-            margin-bottom: 15px;
-        }
-
-        .feature h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 5px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--gold-accent);
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background: linear-gradient(rgba(139, 0, 0, 0.8), rgba(139, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1518492104633-130d0cc84637?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            text-align: center;
-        }
-
-        .testimonials h2 {
-            color: white;
-        }
-
-        .testimonials h2:after {
-            background: var(--gold-accent);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .testimonial-card p:before,
-        .testimonial-card p:after {
-            content: '"';
-            font-size: 2rem;
-            color: var(--gold-accent);
-            opacity: 0.5;
-        }
-
-        .testimonial-card p:before {
-            position: absolute;
-            top: -15px;
-            left: -10px;
-        }
-
-        .testimonial-card p:after {
-            position: absolute;
-            bottom: -30px;
-            right: -10px;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .testimonial-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-            border: 2px solid var(--gold-accent);
-        }
-
-        .author-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .author-info p {
-            font-size: 0.8rem;
-            opacity: 0.8;
-            margin: 0;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--light-cream);
-        }
-
-        .contact-container {
-            display: flex;
-            gap: 50px;
-            margin-top: 40px;
-        }
-
-        .contact-info {
-            flex: 1;
-            background: white;
-            padding: 40px;
-            border-radius: 5px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .contact-info h3 {
-            margin-bottom: 25px;
-            color: var(--primary-color);
-            font-size: 1.0rem;
-        }
-
-        .contact-info p {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            color: var(--text-color);
-        }
-
-        .contact-info i {
-            margin-right: 15px;
-            color: var(--gold-accent);
-            font-size: 1.8rem;
-            min-width: 25px;
-        }
-
-        .social-links {
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            margin-right: 15px;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            background: rgba(139, 0, 0, 0.1);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .contact-form {
-            flex: 1;
-            background: white;
-            padding: 40px;
-            border-radius: 5px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text-color);
-        }
-
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus,
-        .contact-form select:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: var(--gold-accent);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--gold-accent);
-        }
-
-        .footer-column p {
-            margin-bottom: 20px;
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-            opacity: 0.8;
-            font-size: 0.95rem;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        .footer-links a:before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--gold-accent);
-            transition: all 0.3s;
-            opacity: 0;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-            padding-left: 20px;
-        }
-
-        .footer-links a:hover:before {
-            opacity: 1;
-            left: -5px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 20px;
-        }
-
-        .tab-btn {
-            padding: 15px 30px;
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .tab-btn.active {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            h2 {
-                font-size: 2.5rem;
-            }
-            
-            .hero h1 {
-                font-size: 4rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            section {
-                padding: 60px 0;
-            }
-            
-            .about .container {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                margin-top: 40px;
-            }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-            
-            .contact-info,
-            .contact-form {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .features {
-                flex-direction: column;
-            }
-            
-            .feature {
-                margin: 10px 0;
-            }
-
-            .logo img {
-                height: 50px;
-            }
-
-            .logo-text h1 {
-                font-size: 1.5rem;
-            }
-
-            .tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .tab-btn {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            h2 {
-                font-size: 2rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1rem;
-            }
-            
-            .product-grid,
-            .cattle-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .logo {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .logo img {
-                margin-bottom: 10px;
-            }
-        }
-
-        /* New Interactive Features */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--cream-color);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s;
-        }
-
-        .steak-loader {
-            position: relative;
-            width: 100px;
-            height: 60px;
-        }
-
-        .grill-marks {
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            background: var(--primary-color);
-            animation: grillLoader 1.5s infinite;
-        }
-
-        .grill-marks:nth-child(2) { top: 20px; animation-delay: 0.2s; }
-        .grill-marks:nth-child(3) { top: 40px; animation-delay: 0.4s; }
-
-        @keyframes grillLoader {
-            0% { width: 0; left: 0; }
-            50% { width: 100%; left: 0; }
-            100% { width: 0; left: 100%; }
-        }
-
-        .sizzle-btn {
-            animation: sizzle 1.5s infinite;
-            position: relative;
-        }
-
-        @keyframes sizzle {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); opacity: 0.9; }
-            100% { transform: scale(1); }
-        }
-
-        [data-tooltip]:hover:after {
-            content: attr(data-tooltip);
-            position: absolute;
-            background: var(--gold-accent);
-            color: var(--primary-color);
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-            top: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    </style>
+    <link rel="stylesheet" href="styles/main.css.txt">
 </head>
 <body>
     <!-- Loader -->
-    <div class="loader">
-        <div class="steak-loader">
+    <div class="loader" role="status" aria-live="polite">
+        <div class="steak-loader" aria-label="Loading">
             <div class="grill-marks"></div>
             <div class="grill-marks"></div>
             <div class="grill-marks"></div>
         </div>
     </div>
-
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:30px;right:30px;z-index:2000;" class="btn"><i class="fas fa-arrow-up"></i></button>
     <!-- Header -->
-    <header id="header">
+    <header id="header" role="banner">
         <div class="container">
             <div class="logo">
-                <img src="assets/Mabhena_Meats_20250216_141250_0000_page-0001.jpg" alt="BoksNBeef Logo">
+                <img src="assets/Mabhena_Meats_20250216_141250_0000_page-0001.jpg" alt="BoksNBeef Logo" width="60" height="60">
                 <div class="logo-text">
                     <h1>Boks N' Beef</h1>
                     <p>Premium Cattle & Artisanal Beef</p>
                 </div>
             </div>
-            <nav>
-                <ul>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul id="mainNav">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#cattle">Cattle</a></li>
                     <li><a href="#beef">Beef</a></li>
@@ -1048,9 +49,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <button class="mobile-menu" aria-label="Open menu" aria-controls="mainNav" aria-expanded="false"><i class="fas fa-bars"></i></button>
             </nav>
         </div>
     </header>
@@ -1076,7 +75,7 @@
             <div class="cattle-grid">
                 <div class="cattle-card">
                     <span class="cattle-badge">Breeding Bull</span>
-                    <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Brahman Bull">
+                    <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Brahman Bull, 4 Years, 850kg, 98% Health" width="600" height="250" loading="lazy">
                     <div class="cattle-info">
                         <h3>Brahman Bull</h3>
                         <p>Premium genetics with excellent heat tolerance and adaptability</p>
@@ -1269,11 +268,11 @@
             <h2>What Our Clients Say</h2>
             <p class="section-subtitle">Trusted by farmers, ranchers, and top chefs</p>
             
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
+            <div class="testimonial-grid" id="testimonialCarousel" aria-live="polite">
+                <div class="testimonial-card" tabindex="0">
                     <p>The Brahman bull I purchased from BoksNBeef has transformed my herd. His offspring show incredible growth rates and adaptability to our climate.</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John D.">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John D. - Cattle Rancher" width="50" height="50" loading="lazy">
                         <div class="author-info">
                             <h4>John D.</h4>
                             <p>Cattle Rancher</p>
@@ -1281,10 +280,10 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card">
+                <div class="testimonial-card" tabindex="0">
                     <p>As a chef, I demand the best. BoksNBeef consistently delivers exceptional dry-aged beef with perfect marbling and flavor depth.</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K.">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K. - Executive Chef" width="50" height="50" loading="lazy">
                         <div class="author-info">
                             <h4>Sarah K.</h4>
                             <p>Executive Chef</p>
@@ -1292,10 +291,10 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card">
+                <div class="testimonial-card" tabindex="0">
                     <p>Their AI services helped us improve our herd genetics significantly. Professional, knowledgeable, and always available for consultation.</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Robert M.">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Robert M. - Dairy Farmer" width="50" height="50" loading="lazy">
                         <div class="author-info">
                             <h4>Robert M.</h4>
                             <p>Dairy Farmer</p>
@@ -1303,6 +302,8 @@
                     </div>
                 </div>
             </div>
+            <button id="prevTestimonial" aria-label="Previous testimonial" class="btn btn-outline" style="margin:10px;">&lt;</button>
+            <button id="nextTestimonial" aria-label="Next testimonial" class="btn btn-outline" style="margin:10px;">&gt;</button>
         </div>
     </section>
 
@@ -1312,10 +313,10 @@
             <h2>Get In Touch With Us</h2>
             <p class="section-subtitle">We'd love to discuss your cattle or beef needs</p>
             
-            <div class="tabs">
-                <button class="tab-btn active" data-tab="cattle-contact">Cattle Inquiry</button>
-                <button class="tab-btn" data-tab="beef-contact">Beef Products</button>
-                <button class="tab-btn" data-tab="services-contact">Services</button>
+            <div class="tabs" role="tablist">
+                <button class="tab-btn active" data-tab="cattle-contact" role="tab" aria-selected="true" aria-controls="cattle-contact" tabindex="0">Cattle Inquiry</button>
+                <button class="tab-btn" data-tab="beef-contact" role="tab" aria-selected="false" aria-controls="beef-contact" tabindex="-1">Beef Products</button>
+                <button class="tab-btn" data-tab="services-contact" role="tab" aria-selected="false" aria-controls="services-contact" tabindex="-1">Services</button>
             </div>
             
             <div class="contact-container">
@@ -1327,15 +328,15 @@
                     <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM | Sat: 10AM - 4PM</p>
                     
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" autocomplete="off" novalidate>
                         <div class="tab-content active" id="cattle-contact">
                             <div class="form-group">
                                 <label for="cattle-type">Cattle Type Interest</label>
@@ -1441,9 +442,9 @@
                     <h3>BoksNBeef</h3>
                     <p>Premium cattle breeding and artisanal beef production. Excellence from pasture to plate.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 
@@ -1485,66 +486,6 @@
         </div>
     </footer>
 
-    <script>
-        // Loader
-        window.addEventListener('load', () => {
-            document.querySelector('.loader').style.opacity = '0';
-            setTimeout(() => {
-                document.querySelector('.loader').style.display = 'none';
-            }, 500);
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Mobile menu
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const nav = document.querySelector('nav ul');
-            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-        });
-
-        // Contact form tabs
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons and contents
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Show corresponding content
-                const tabId = btn.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your inquiry! We will contact you shortly.');
-            this.reset();
-        });
-    </script>
+    <script src="scripts/main.js.txt"></script>
 </body>
 </html>
