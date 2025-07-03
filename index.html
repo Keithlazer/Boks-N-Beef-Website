@@ -29,7 +29,7 @@
         </div>
     </div>
     <!-- Back to Top Button -->
-    <button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:30px;right:30px;z-index:2000;" class="btn"><i class="fas fa-arrow-up"></i></button>
+    <button id="backToTop" aria-label="Back to top" class="btn"><i class="fas fa-arrow-up"></i></button>
     <!-- Header -->
     <header id="header" role="banner">
         <div class="container">
@@ -45,6 +45,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#cattle">Cattle</a></li>
                     <li><a href="#beef">Beef</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -190,6 +191,71 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Our Ranch & Products</h2>
+            <p class="section-subtitle">Take a visual tour of our facilities and premium cattle</p>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cattle">Cattle</button>
+                <button class="filter-btn" data-filter="beef">Beef Products</button>
+                <button class="filter-btn" data-filter="ranch">Ranch</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="cattle">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.34.33.jpeg" alt="Premium Brahman Bull" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Premium Brahman Bull</h4>
+                        <p>4 years old, excellent genetics</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="cattle">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.34.58.jpeg" alt="Angus Heifer" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Angus Heifer</h4>
+                        <p>18 months, superior marbling</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="beef">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.35.12.jpeg" alt="Dry-Aged Ribeye" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Dry-Aged Ribeye</h4>
+                        <p>28-day aged perfection</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="beef">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.35.44.jpeg" alt="Premium Cuts" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Premium Cuts</h4>
+                        <p>Hand-selected quality</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="ranch">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.36.11.jpeg" alt="Our Ranch" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Our Ranch</h4>
+                        <p>Sustainable grazing practices</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="ranch">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.36.52.jpeg" alt="Facilities" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Processing Facilities</h4>
+                        <p>State-of-the-art equipment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
@@ -262,6 +328,20 @@
         </div>
     </section>
 
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience Premium Quality?</h2>
+                <p>Whether you're looking for breeding stock to improve your herd or premium beef for your table, we're here to help you achieve excellence.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-green">Get Started Today</a>
+                    <a href="#gallery" class="btn btn-outline">View Our Gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
@@ -302,8 +382,177 @@
                     </div>
                 </div>
             </div>
-            <button id="prevTestimonial" aria-label="Previous testimonial" class="btn btn-outline" style="margin:10px;">&lt;</button>
-            <button id="nextTestimonial" aria-label="Next testimonial" class="btn btn-outline" style="margin:10px;">&gt;</button>
+            <button id="prevTestimonial" aria-label="Previous testimonial" class="btn btn-outline testimonial-nav-btn">&lt;</button>
+            <button id="nextTestimonial" aria-label="Next testimonial" class="btn btn-outline testimonial-nav-btn">&gt;</button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="section-subtitle">Common questions about our cattle and beef products</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                        <span>What breeds of cattle do you specialize in?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-1">
+                        <p>We specialize in Brahman, Angus, and Hereford breeds. Our Brahman cattle excel in heat tolerance and adaptability, while our Angus provide superior marbling and meat quality. Hereford cattle offer excellent feed efficiency and hardiness.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                        <span>How long do you age your beef?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-2">
+                        <p>Our beef is dry-aged for 28-45 days in our climate-controlled aging room. This process enhances flavor, tenderness, and creates a more concentrated beef taste. Premium cuts like ribeye receive extended aging for maximum flavor development.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                        <span>Do you offer delivery services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-3">
+                        <p>Yes, we provide delivery services for both live cattle and packaged beef products. We serve the greater Harare area and surrounding regions. Delivery fees vary based on distance and order size. Contact us for specific pricing.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                        <span>What is your breeding program like?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-4">
+                        <p>Our breeding program focuses on genetic excellence and performance. We use artificial insemination with semen from top-performing bulls, maintain detailed EPD records, and select for traits like growth rate, marbling, and maternal qualities.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                        <span>How do you ensure beef quality?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-5">
+                        <p>Quality starts with our breeding program and continues through careful feeding, humane handling, and precise processing. We follow strict protocols for food safety and quality control, with regular testing and monitoring throughout the process.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                        <span>Can I visit your ranch?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-6">
+                        <p>Yes, we welcome visitors by appointment. Ranch tours are available Monday through Friday, 9 AM to 4 PM. Please contact us at least 24 hours in advance to schedule your visit and ensure we can provide you with the best experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Calculator Section -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <h2>Pricing Calculator</h2>
+            <p class="section-subtitle">Get an estimate for your cattle or beef order</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-tabs">
+                    <button class="calc-tab active" data-calc="cattle">Cattle Pricing</button>
+                    <button class="calc-tab" data-calc="beef">Beef Pricing</button>
+                </div>
+                
+                <div class="calculator-content">
+                    <div class="calc-section active" id="cattle-calc">
+                        <div class="calc-form">
+                            <div class="form-group">
+                                <label for="cattle-type-calc">Cattle Type</label>
+                                <select id="cattle-type-calc">
+                                    <option value="">Select Type</option>
+                                    <option value="bull">Breeding Bull</option>
+                                    <option value="heifer">Heifer</option>
+                                    <option value="steer">Steer</option>
+                                    <option value="cow">Cow</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cattle-breed-calc">Breed</label>
+                                <select id="cattle-breed-calc">
+                                    <option value="">Select Breed</option>
+                                    <option value="brahman">Brahman</option>
+                                    <option value="angus">Angus</option>
+                                    <option value="hereford">Hereford</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cattle-weight">Weight (kg)</label>
+                                <input type="number" id="cattle-weight" min="200" max="1200" placeholder="Enter weight">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cattle-quantity">Quantity</label>
+                                <input type="number" id="cattle-quantity" min="1" value="1">
+                            </div>
+                            
+                            <button class="btn btn-green" onclick="calculateCattlePrice()">Calculate Price</button>
+                        </div>
+                        
+                        <div class="calc-result" id="cattle-result">
+                            <h3>Estimated Price</h3>
+                            <div class="price-display">
+                                <span class="currency">$</span>
+                                <span class="amount" id="cattle-price">0</span>
+                            </div>
+                            <p class="price-note">*Prices are estimates. Contact us for exact pricing and availability.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-section" id="beef-calc">
+                        <div class="calc-form">
+                            <div class="form-group">
+                                <label for="beef-cut">Beef Cut</label>
+                                <select id="beef-cut">
+                                    <option value="">Select Cut</option>
+                                    <option value="ribeye">Dry-Aged Ribeye</option>
+                                    <option value="tenderloin">Beef Tenderloin</option>
+                                    <option value="ground">Ground Beef</option>
+                                    <option value="sirloin">Sirloin Steak</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="beef-weight">Weight (kg)</label>
+                                <input type="number" id="beef-weight" min="0.5" step="0.5" placeholder="Enter weight">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="beef-quantity">Quantity</label>
+                                <input type="number" id="beef-quantity" min="1" value="1">
+                            </div>
+                            
+                            <button class="btn btn-green" onclick="calculateBeefPrice()">Calculate Price</button>
+                        </div>
+                        
+                        <div class="calc-result" id="beef-result">
+                            <h3>Estimated Price</h3>
+                            <div class="price-display">
+                                <span class="currency">$</span>
+                                <span class="amount" id="beef-price">0</span>
+                            </div>
+                            <p class="price-note">*Prices include basic packaging. Delivery fees may apply.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -454,7 +703,9 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#cattle">Cattle</a></li>
                         <li><a href="#beef">Beef Products</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>

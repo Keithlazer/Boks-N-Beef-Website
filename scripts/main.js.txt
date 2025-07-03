@@ -168,3 +168,146 @@ if (testimonialCards.length > 0) {
         showTestimonial(testimonialIndex);
     });
 }
+
+// Gallery filters
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Filter gallery items
+        galleryItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+                item.style.display = 'block';
+                item.style.animation = 'fadeIn 0.5s ease';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+// FAQ Accordion
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other FAQ items
+        faqQuestions.forEach(q => {
+            if (q !== question) {
+                q.setAttribute('aria-expanded', 'false');
+                q.nextElementSibling.classList.remove('active');
+            }
+        });
+        
+        // Toggle current FAQ item
+        question.setAttribute('aria-expanded', !isExpanded);
+        if (!isExpanded) {
+            answer.classList.add('active');
+        } else {
+            answer.classList.remove('active');
+        }
+    });
+    
+    // Keyboard navigation for FAQ
+    question.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            question.click();
+        }
+    });
+});
+
+// Add CSS animation for gallery fade in
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+`;
+document.head.appendChild(style);
+
+// Pricing Calculator Tabs
+const calcTabs = document.querySelectorAll('.calc-tab');
+const calcSections = document.querySelectorAll('.calc-section');
+
+calcTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const targetCalc = tab.getAttribute('data-calc');
+        
+        // Update active tab
+        calcTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        // Show corresponding section
+        calcSections.forEach(section => {
+            section.classList.remove('active');
+            if (section.id === `${targetCalc}-calc`) {
+                section.classList.add('active');
+            }
+        });
+    });
+});
+
+// Pricing Calculator Functions
+function calculateCattlePrice() {
+    const type = document.getElementById('cattle-type-calc').value;
+    const breed = document.getElementById('cattle-breed-calc').value;
+    const weight = parseFloat(document.getElementById('cattle-weight').value);
+    const quantity = parseInt(document.getElementById('cattle-quantity').value);
+    
+    if (!type || !breed || !weight || !quantity) {
+        alert('Please fill in all fields');
+        return;
+    }
+    
+    // Base prices per kg (these would be updated with real market prices)
+    const basePrices = {
+        'bull': { 'brahman': 8.5, 'angus': 9.2, 'hereford': 8.8 },
+        'heifer': { 'brahman': 7.8, 'angus': 8.5, 'hereford': 8.0 },
+        'steer': { 'brahman': 7.2, 'angus': 7.8, 'hereford': 7.5 },
+        'cow': { 'brahman': 6.5, 'angus': 7.0, 'hereford': 6.8 }
+    };
+    
+    const basePrice = basePrices[type][breed];
+    const totalPrice = basePrice * weight * quantity;
+    
+    document.getElementById('cattle-price').textContent = totalPrice.toFixed(2);
+    document.getElementById('cattle-result').classList.add('show');
+}
+
+function calculateBeefPrice() {
+    const cut = document.getElementById('beef-cut').value;
+    const weight = parseFloat(document.getElementById('beef-weight').value);
+    const quantity = parseInt(document.getElementById('beef-quantity').value);
+    
+    if (!cut || !weight || !quantity) {
+        alert('Please fill in all fields');
+        return;
+    }
+    
+    // Prices per kg
+    const prices = {
+        'ribeye': 42.99,
+        'tenderloin': 49.99,
+        'ground': 24.99,
+        'sirloin': 35.99
+    };
+    
+    const pricePerKg = prices[cut];
+    const totalPrice = pricePerKg * weight * quantity;
+    
+    document.getElementById('beef-price').textContent = totalPrice.toFixed(2);
+    document.getElementById('beef-result').classList.add('show');
+}
