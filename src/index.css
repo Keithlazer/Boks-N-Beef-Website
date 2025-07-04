@@ -2,34 +2,246 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Custom Properties for Design System */
+:root {
+  --font-ranch: "Playfair Display", serif;
+  --font-ui: "Lato", sans-serif;
+  --brand-green: #3a5f40;
+  --beef-red: #a52a2a;
+  --gold-accent: #d4af37;
+  --ranch-brown: #8B4513;
+  --grass-green: #228B22;
+  --leather: #8B4513;
+  --wood: #DEB887;
+  
+  /* Seasonal variations */
+  --primary-accent: var(--gold-accent);
+  --particle-type: grass;
+}
+
+/* Seasonal theme classes */
+.season-summer {
+  --primary-accent: #e6a756; /* Golden hour */
+  --particle-type: grass;
+}
+
+.season-winter {
+  --primary-accent: #87CEEB; /* Sky blue */
+  --particle-type: snowflakes;
+}
+
+.season-spring {
+  --primary-accent: #90EE90; /* Light green */
+  --particle-type: flowers;
+}
+
+.season-autumn {
+  --primary-accent: #D2691E; /* Chocolate */
+  --particle-type: leaves;
+}
+
+/* Base styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-ui);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Typography */
+.font-ranch {
+  font-family: var(--font-ranch);
 }
 
-/* Custom styles for cart */
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+/* Custom component styles */
+@layer components {
+  .btn-primary {
+    @apply bg-brand-green hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-50;
+  }
+  
+  .btn-secondary {
+    @apply bg-beef-red hover:bg-red-700 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-beef-red focus:ring-opacity-50;
+  }
+  
+  .btn-accent {
+    @apply bg-gold-accent hover:bg-yellow-600 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold-accent focus:ring-opacity-50;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, rgba(58, 95, 64, 0.9) 0%, rgba(165, 42, 42, 0.8) 100%);
+  }
+  
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Animation utilities */
+@layer utilities {
+  .animate-stagger-1 { animation-delay: 0.1s; }
+  .animate-stagger-2 { animation-delay: 0.2s; }
+  .animate-stagger-3 { animation-delay: 0.3s; }
+  .animate-stagger-4 { animation-delay: 0.4s; }
+  .animate-stagger-5 { animation-delay: 0.5s; }
+  
+  .easing-ranch {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+/* Particle system */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.6;
+  animation: particleFloat 8s linear infinite;
+}
+
+.particle.grass {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20"><path d="M5 0 L3 15 L5 20 L7 15 Z" fill="%23228B22"/></svg>') no-repeat;
+  width: 10px;
+  height: 20px;
+}
+
+.particle.snowflake {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 0 L10 20 M0 10 L20 10 M3 3 L17 17 M17 3 L3 17" stroke="white" stroke-width="1"/></svg>') no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+/* Hero section enhancements */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Interactive elements */
+.interactive-card {
+  @apply transition-all duration-300 transform hover:scale-105 hover:shadow-2xl;
+}
+
+.interactive-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Sizzle effect for beef products */
+.sizzle-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.sizzle-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: sizzle 2s infinite;
+}
+
+@keyframes sizzle {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Cart specific styles */
 .cart-item-row {
-  @apply border-b border-gray-200 py-4;
+  @apply border-b border-gray-200 py-4 transition-all duration-200;
 }
 
 .cart-item-row:last-child {
   @apply border-b-0;
 }
 
+.cart-item-row:hover {
+  @apply bg-gray-50;
+}
+
 /* Modal styles */
 .ReactModal__Overlay {
-  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm;
 }
 
 .ReactModal__Content {
-  @apply bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl;
+  @apply bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl transform transition-all duration-300;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+  @apply outline-none ring-2 ring-gold-accent ring-opacity-50;
+}
+
+/* Loading states */
+.loading-skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content h1 {
+    font-size: 5rem;
+    line-height: 1;
+  }
 } 

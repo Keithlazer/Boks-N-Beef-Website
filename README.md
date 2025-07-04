@@ -1,184 +1,299 @@
-# BoksNBeef Shopping Cart
+# BoksNBeef Enhanced Website
 
-A React TypeScript shopping cart implementation for BoksNBeef with enhanced cart management features.
+A premium React TypeScript website with immersive hero section, enhanced shopping cart, performance optimization, and comprehensive accessibility features.
 
-## Features Implemented
+## 🚀 **Premium Features Implemented**
 
-### 1. Individual Item Delete Buttons
-- ✅ Delete button (trash icon) at the end of each cart item row
-- ✅ Uses `FaTrash` icon from react-icons
-- ✅ Red hover effect with Tailwind CSS
-- ✅ Removes only that specific item from cart
+### 1. **Immersive Hero Section**
+- **Dynamic Background**: Fullscreen cattle ranch video backdrop with autoplay/muted/loop
+- **Particle System**: Seasonal particle effects (grass/snowflakes) with floating animations
+- **GSAP Animations**: Staggered headline reveal with letter-by-letter animation
+- **Interactive Stats Cards**: Scale-up + glow effects with tooltips on hover
+- **Enhanced CTAs**: 
+  - "Explore Cattle" button with animated grass texture
+  - "Discover Beef" button with sizzling meat effect
+- **Seasonal Adaptations**: Dynamic theming for summer, winter, spring, autumn
+- **Video Controls**: Play/pause functionality with accessible controls
 
-### 2. Clear Entire Cart Button
-- ✅ "Clear Entire Cart" button below cart items
-- ✅ Only visible when cart has items
-- ✅ Red background with white text
-- ✅ Hover opacity effect
+### 2. **Enhanced Shopping Cart System**
+- **Individual Item Controls**: FaTrash icons with Tailwind hover effects
+- **Clear Cart System**: "Clear Entire Cart" button with confirmation modal
+- **Empty State UX**: Conditional rendering with "Continue Shopping" button
+- **Context API Integration**: Full cart management with TypeScript interfaces
+- **Responsive Design**: Mobile-first approach with touch-friendly interactions
 
-### 3. Clear Cart Confirmation Modal
-- ✅ Modal using react-modal
-- ✅ Title: "Confirm Clear Cart?"
-- ✅ Body: "Are you sure you want to remove all items from your cart?"
-- ✅ Two buttons: Cancel (gray outline) and Confirm (solid red)
-- ✅ On confirm: Clears entire cart and closes modal
-- ✅ Accessible with proper aria labels
+### 3. **Performance Architecture**
+- **Performance Budget**: FCP < 1.2s, LCP < 2.5s, FID < 100ms
+- **Asset Optimization**: WebP fallbacks, lazy loading, priority loading
+- **Animation Framework**: GSAP with optimized easing functions
+- **Memory Monitoring**: Real-time memory usage tracking
+- **Performance Reporting**: Automated violation detection and recommendations
 
-### 4. Empty Cart State
-- ✅ Hides cart items table when empty
-- ✅ Hides Clear Cart button when empty
-- ✅ Shows "Your cart is empty" message
-- ✅ Includes "Continue Shopping" button linking to "/menu"
+### 4. **Unified Design System**
+- **Typography**: Playfair Display (ranch) + Lato (UI) font pairing
+- **Color Palette**: Brand green (#3a5f40), beef red (#a52a2a), gold accent (#d4af37)
+- **Motion Principles**: Cubic-bezier(0.25, 0.46, 0.45, 0.94) easing, max 1200ms duration
+- **Component Library**: Reusable Button, Card, Modal, and Error Boundary components
 
-### 5. Cart Context Modifications
-- ✅ `removeItem(itemId: string) => void` method
-- ✅ `clearCart() => void` method
-- ✅ Full TypeScript support with interfaces
+### 5. **Accessibility Excellence**
+- **WCAG 2.1 AA Compliance**: Automated audit with violation detection
+- **Screen Reader Support**: ARIA labels, semantic HTML, focus management
+- **Keyboard Navigation**: Full keyboard accessibility with focus trapping
+- **Reduced Motion**: Respects user preferences for reduced motion
+- **Contrast Verification**: Automated color contrast ratio checking
 
-## Project Structure
+## 📁 **Project Structure**
 
 ```
 src/
 ├── components/
-│   ├── CartTable.tsx          # Main cart table with delete buttons
-│   ├── ClearCartButton.tsx    # Clear cart button with modal
-│   └── CartDemo.tsx           # Demo component to add sample items
+│   ├── HeroSection.tsx          # Immersive hero with GSAP animations
+│   ├── CartTable.tsx            # Enhanced cart with delete buttons
+│   ├── ClearCartButton.tsx      # Clear cart with confirmation modal
+│   ├── CartDemo.tsx             # Demo component for testing
+│   └── SharedComponents.tsx     # Reusable component library
 ├── contexts/
-│   └── CartContext.tsx        # Cart context with all methods
+│   └── CartContext.tsx          # Cart state management
 ├── types/
-│   └── cart.ts               # TypeScript interfaces
-├── App.tsx                   # Main app component
-├── index.tsx                 # App entry point
-└── index.css                 # Tailwind CSS and custom styles
+│   └── cart.ts                  # TypeScript interfaces
+├── utils/
+│   ├── performance.ts           # Performance monitoring utilities
+│   └── accessibility.ts         # Accessibility audit and utilities
+├── App.tsx                      # Main app with error boundary
+├── index.tsx                    # Entry point with monitoring
+└── index.css                    # Tailwind + custom styles
 ```
 
-## Setup Instructions
+## 🎨 **Design System**
 
-### Prerequisites
+### **Typography**
+```css
+:root {
+  --font-ranch: "Playfair Display", serif;
+  --font-ui: "Lato", sans-serif;
+}
+```
+
+### **Color Palette**
+```json
+{
+  "brand-green": "#3a5f40",
+  "beef-red": "#a52a2a", 
+  "gold-accent": "#d4af37",
+  "ranch-brown": "#8B4513",
+  "grass-green": "#228B22"
+}
+```
+
+### **Animation System**
+- **Easing**: `cubic-bezier(0.25, 0.46, 0.45, 0.94)`
+- **Duration**: Max 1200ms for complex animations
+- **Stagger**: 80ms delays for sequential animations
+- **Performance**: 60fps target with fallbacks
+
+## ⚡ **Performance Features**
+
+### **Monitoring**
+- Real-time FCP, LCP, FID, CLS tracking
+- Asset size monitoring with budget enforcement
+- Memory usage tracking
+- Animation performance monitoring (FPS)
+
+### **Optimization**
+- WebP image format with fallbacks
+- Lazy loading for non-critical assets
+- Intersection Observer for performance
+- Reduced motion support
+
+### **Budget Compliance**
+```typescript
+const PERFORMANCE_BUDGET = {
+  FCP: 1200,        // 1.2 seconds
+  LCP: 2500,        // 2.5 seconds  
+  FID: 100,         // 100ms
+  CLS: 0.1,         // 0.1
+  HERO_ASSETS: 200  // 200kb
+};
+```
+
+## ♿ **Accessibility Features**
+
+### **WCAG 2.1 AA Compliance**
+- Automated audit with violation detection
+- Color contrast ratio verification
+- Semantic HTML structure validation
+- Focus management and keyboard navigation
+
+### **Screen Reader Support**
+- ARIA labels and descriptions
+- Semantic HTML elements
+- Focus indicators and management
+- Reduced motion preferences
+
+### **Keyboard Navigation**
+- Full keyboard accessibility
+- Focus trapping for modals
+- Arrow key navigation
+- Escape key handling
+
+## 🛠 **Technical Implementation**
+
+### **Dependencies**
+```json
+{
+  "gsap": "^3.12.2",           // Animation library
+  "react-icons": "^4.8.0",     // Icon library
+  "react-modal": "^3.16.1",    // Modal system
+  "swiper": "^10.3.1",         // Touch slider
+  "tailwindcss": "^3.3.2"      // Utility-first CSS
+}
+```
+
+### **Component Architecture**
+- **Functional Components**: All components use React hooks
+- **TypeScript**: Full type safety with interfaces
+- **Error Boundaries**: Graceful error handling
+- **Context API**: State management for cart
+
+### **Responsive Design**
+- Mobile-first approach
+- Breakpoint system: sm, md, lg, xl
+- Touch-friendly interactions
+- Adaptive layouts
+
+## 🚀 **Setup Instructions**
+
+### **Prerequisites**
 - Node.js (v14 or higher)
 - npm or yarn
 
-### Installation
-
-1. Install dependencies:
+### **Installation**
 ```bash
+# Install dependencies
 npm install
-```
 
-2. Install additional required packages:
-```bash
-npm install tailwindcss @tailwindcss/forms react-icons react-modal @types/react-modal
-```
+# Install additional packages
+npm install gsap swiper react-icons react-modal @types/react-modal
 
-3. Start the development server:
-```bash
+# Start development server
 npm start
+
+# Build for production
+npm run build
+
+# Analyze bundle
+npm run analyze
 ```
 
-## Usage
+## 🧪 **Testing Features**
 
-### Adding Items to Cart
-Use the `addItem` method from the cart context:
-```typescript
-const { addItem } = useCart();
+### **Performance Testing**
+```bash
+# Run performance audit
+npm run analyze
 
-addItem({
-  id: 'unique-id',
-  name: 'Product Name',
-  price: 42.99,
-  quantity: 1,
-  category: 'beef',
-  image: 'image-url'
-});
+# Check accessibility
+# Automated audit runs on page load
 ```
 
-### Removing Individual Items
-Use the `removeItem` method:
+### **Manual Testing Checklist**
+- [ ] Hero section animations load smoothly
+- [ ] Video background plays correctly
+- [ ] Particle effects render properly
+- [ ] Cart functionality works end-to-end
+- [ ] Modal confirmations function correctly
+- [ ] Keyboard navigation works
+- [ ] Screen reader compatibility
+- [ ] Mobile responsiveness
+
+## 📊 **Performance Metrics**
+
+### **Target Metrics**
+- **First Contentful Paint**: < 1.2s
+- **Largest Contentful Paint**: < 2.5s
+- **First Input Delay**: < 100ms
+- **Cumulative Layout Shift**: < 0.1
+- **Hero Assets**: < 200kb
+
+### **Monitoring**
+- Real-time performance tracking
+- Automated violation detection
+- Performance report generation
+- Memory usage monitoring
+
+## 🎯 **Accessibility Score**
+
+### **WCAG 2.1 AA Compliance**
+- **Color Contrast**: ✅ 4.5:1 ratio maintained
+- **Keyboard Navigation**: ✅ Full support
+- **Screen Reader**: ✅ ARIA labels implemented
+- **Semantic HTML**: ✅ Proper structure
+- **Focus Management**: ✅ Visible indicators
+
+## 🔧 **Customization**
+
+### **Seasonal Themes**
 ```typescript
-const { removeItem } = useCart();
-removeItem('item-id');
-```
-
-### Clearing Entire Cart
-Use the `clearCart` method:
-```typescript
-const { clearCart } = useCart();
-clearCart();
-```
-
-## Component Details
-
-### CartTable Component
-- Displays all cart items in a responsive table
-- Individual delete buttons for each item
-- Quantity controls with +/- buttons
-- Empty state with shopping cart icon
-- Cart summary with total price
-- Integration with ClearCartButton
-
-### ClearCartButton Component
-- Conditional rendering (only shows when cart has items)
-- Confirmation modal using react-modal
-- Accessible design with proper ARIA labels
-- Red styling with hover effects
-
-### CartContext
-- Uses React useReducer for state management
-- Provides all cart operations: add, remove, update, clear
-- TypeScript interfaces for type safety
-- Methods for calculating totals
-
-## Styling
-
-- **Tailwind CSS**: Utility-first CSS framework
-- **Custom Colors**: Beef-themed color palette (beef-red, beef-dark, beef-light)
-- **Responsive Design**: Mobile-first approach
-- **Hover Effects**: Smooth transitions and visual feedback
-- **Accessibility**: Proper contrast ratios and ARIA labels
-
-## TypeScript Interfaces
-
-```typescript
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-  image?: string;
-  category: 'cattle' | 'beef' | 'services';
+// Summer theme
+.season-summer {
+  --primary-accent: #e6a756;
+  --particle-type: grass;
 }
 
-interface CartContextType {
-  items: CartItem[];
-  addItem: (item: CartItem) => void;
-  removeItem: (itemId: string) => void;
-  updateQuantity: (itemId: string, quantity: number) => void;
-  clearCart: () => void;
-  getTotalItems: () => number;
-  getTotalPrice: () => number;
+// Winter theme  
+.season-winter {
+  --primary-accent: #87CEEB;
+  --particle-type: snowflakes;
 }
 ```
 
-## Testing the Implementation
+### **Animation Customization**
+```css
+/* Custom easing */
+.easing-ranch {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-1. Start the application
-2. Use the "Add Sample Items to Cart" section to add items
-3. Test individual delete buttons on each item
-4. Test quantity controls (+/- buttons)
-5. Test the "Clear Entire Cart" button and confirmation modal
-6. Verify empty cart state appears when all items are removed
+/* Stagger delays */
+.animate-stagger-1 { animation-delay: 0.1s; }
+.animate-stagger-2 { animation-delay: 0.2s; }
+```
 
-## Browser Compatibility
+## 📈 **Future Enhancements**
 
-- Modern browsers with ES6+ support
-- Responsive design for mobile, tablet, and desktop
-- Accessible for screen readers and keyboard navigation
+### **Planned Features**
+- [ ] PWA capabilities
+- [ ] Advanced filtering system
+- [ ] Real-time inventory updates
+- [ ] Payment processing integration
+- [ ] Multi-language support
+- [ ] Advanced analytics dashboard
 
-## Future Enhancements
+### **Performance Optimizations**
+- [ ] Service worker implementation
+- [ ] Advanced caching strategies
+- [ ] Image optimization pipeline
+- [ ] Bundle splitting optimization
 
-- Persist cart data in localStorage
-- Add animations for item removal
-- Implement cart item categories/filtering
-- Add bulk operations (select multiple items)
-- Integration with backend API
-- Payment processing integration 
+## 🤝 **Contributing**
+
+1. Fork the repository
+2. Create a feature branch
+3. Follow the coding standards
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 **License**
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 **Support**
+
+For support and questions:
+- Create an issue in the repository
+- Check the documentation
+- Review the performance and accessibility reports
+
+---
+
+**Built with ❤️ for BoksNBeef - Premium Cattle & Artisanal Beef** 

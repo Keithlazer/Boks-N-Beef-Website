@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
 import { useCart } from '../contexts/CartContext';
+import { ConfirmationModal } from './SharedComponents';
 
 interface ClearCartButtonProps {
   className?: string;
@@ -33,38 +33,16 @@ const ClearCartButton: React.FC<ClearCartButtonProps> = ({ className = '' }) => 
         Clear Entire Cart
       </button>
 
-      <Modal
+      <ConfirmationModal
         isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        className="ReactModal__Content"
-        overlayClassName="ReactModal__Overlay"
-        contentLabel="Confirm Clear Cart"
-        ariaHideApp={false}
-      >
-        <div className="text-center">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Confirm Clear Cart?
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Are you sure you want to remove all items from your cart?
-          </p>
-          
-          <div className="flex justify-center space-x-4">
-            <button
-              onClick={closeModal}
-              className="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors duration-200"
-            >
-              Cancel
-            </button>
-            <button
-              onClick={handleClearCart}
-              className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors duration-200"
-            >
-              Confirm
-            </button>
-          </div>
-        </div>
-      </Modal>
+        onClose={closeModal}
+        onConfirm={handleClearCart}
+        title="Confirm Clear Cart?"
+        message="Are you sure you want to remove all items from your cart?"
+        confirmText="Confirm"
+        cancelText="Cancel"
+        variant="danger"
+      />
     </>
   );
 };
