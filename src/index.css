@@ -2,54 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Custom Properties for Design System */
+/* CSS Custom Properties for Modern Ranch Theme */
 :root {
-  --font-ranch: "Playfair Display", serif;
-  --font-ui: "Lato", sans-serif;
-  --brand-green: #3a5f40;
-  --beef-red: #a52a2a;
-  --gold-accent: #d4af37;
-  --ranch-brown: #8B4513;
-  --grass-green: #228B22;
-  --leather: #8B4513;
-  --wood: #DEB887;
-  
-  /* Seasonal variations */
-  --primary-accent: var(--gold-accent);
-  --particle-type: grass;
+  --font-ranch: 'Playfair Display', serif;
+  --font-ui: 'Lato', sans-serif;
+  --deep-brown: #4B3D2A;
+  --warm-beige: #F5F0E1;
+  --gold-accent: #D9A86A;
+  --ranch-red: #C65D3B;
+  --forest-green: #7A9A7A;
+  --accent-cream: #FFF8F0;
+  --black: #181818;
+  --white: #FFFFFF;
+  --brand-green: var(--forest-green);
+  --beef-red: var(--ranch-red);
+  --gold: var(--gold-accent);
+  --primary-bg: var(--warm-beige);
+  --primary-text: var(--deep-brown);
+  --secondary-bg: var(--accent-cream);
+  --secondary-text: var(--ranch-red);
+  --button-bg: var(--ranch-red);
+  --button-text: var(--white);
+  --button-hover-bg: var(--gold-accent);
+  --button-hover-text: var(--deep-brown);
 }
 
-/* Seasonal theme classes */
-.season-summer {
-  --primary-accent: #e6a756; /* Golden hour */
-  --particle-type: grass;
-}
-
-.season-winter {
-  --primary-accent: #87CEEB; /* Sky blue */
-  --particle-type: snowflakes;
-}
-
-.season-spring {
-  --primary-accent: #90EE90; /* Light green */
-  --particle-type: flowers;
-}
-
-.season-autumn {
-  --primary-accent: #D2691E; /* Chocolate */
-  --particle-type: leaves;
-}
-
-/* Base styles */
 body {
   margin: 0;
   font-family: var(--font-ui);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
 }
 
-/* Typography */
 .font-ranch {
   font-family: var(--font-ranch);
 }
@@ -58,53 +42,71 @@ body {
   font-family: var(--font-ui);
 }
 
-/* Custom component styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--deep-brown);
+}
+
+a {
+  color: var(--ranch-red);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--gold-accent);
+}
+
 @layer components {
   .btn-primary {
-    @apply bg-brand-green hover:bg-green-700 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-opacity-50;
+    @apply font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold-accent focus:ring-opacity-50;
+    background-color: var(--button-bg);
+    color: var(--button-text);
   }
-  
+  .btn-primary:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+  }
   .btn-secondary {
-    @apply bg-beef-red hover:bg-red-700 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-beef-red focus:ring-opacity-50;
+    @apply font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-deep-brown focus:ring-opacity-50;
+    background-color: var(--forest-green);
+    color: var(--white);
   }
-  
+  .btn-secondary:hover {
+    background-color: var(--gold-accent);
+    color: var(--deep-brown);
+  }
   .btn-accent {
-    @apply bg-gold-accent hover:bg-yellow-600 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold-accent focus:ring-opacity-50;
+    @apply font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold-accent focus:ring-opacity-50;
+    background-color: var(--gold-accent);
+    color: var(--deep-brown);
   }
-  
+  .btn-accent:hover {
+    background-color: var(--ranch-red);
+    color: var(--white);
+  }
   .card {
-    @apply bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1;
+    @apply rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1;
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
   }
-  
   .hero-gradient {
-    background: linear-gradient(135deg, rgba(58, 95, 64, 0.9) 0%, rgba(165, 42, 42, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(75,61,42,0.95) 0%, rgba(198,93,59,0.85) 100%);
   }
-  
   .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(75,61,42,0.3);
   }
-  
   .glass-effect {
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
 
-/* Animation utilities */
 @layer utilities {
-  .animate-stagger-1 { animation-delay: 0.1s; }
-  .animate-stagger-2 { animation-delay: 0.2s; }
-  .animate-stagger-3 { animation-delay: 0.3s; }
-  .animate-stagger-4 { animation-delay: 0.4s; }
-  .animate-stagger-5 { animation-delay: 0.5s; }
-  
   .easing-ranch {
     transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 }
 
-/* Particle system */
 .particle {
   position: absolute;
   pointer-events: none;
@@ -113,7 +115,7 @@ body {
 }
 
 .particle.grass {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20"><path d="M5 0 L3 15 L5 20 L7 15 Z" fill="%23228B22"/></svg>') no-repeat;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20"><path d="M5 0 L3 15 L5 20 L7 15 Z" fill="%237A9A7A"/></svg>') no-repeat;
   width: 10px;
   height: 20px;
 }
@@ -124,7 +126,6 @@ body {
   height: 20px;
 }
 
-/* Hero section enhancements */
 .hero-video {
   position: absolute;
   top: 0;
@@ -141,25 +142,26 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(75, 61, 42, 0.4);
   z-index: 0;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
+  color: var(--deep-brown);
 }
 
-/* Interactive elements */
 .interactive-card {
   @apply transition-all duration-300 transform hover:scale-105 hover:shadow-2xl;
+  background-color: var(--secondary-bg);
+  color: var(--primary-text);
 }
 
 .interactive-card:hover {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(75, 61, 42, 0.25);
 }
 
-/* Sizzle effect for beef products */
 .sizzle-effect {
   position: relative;
   overflow: hidden;
@@ -181,9 +183,10 @@ body {
   100% { left: 100%; }
 }
 
-/* Cart specific styles */
 .cart-item-row {
-  @apply border-b border-gray-200 py-4 transition-all duration-200;
+  @apply border-b border-gold-accent py-4 transition-all duration-200;
+  background-color: var(--secondary-bg);
+  color: var(--primary-text);
 }
 
 .cart-item-row:last-child {
@@ -191,57 +194,57 @@ body {
 }
 
 .cart-item-row:hover {
-  @apply bg-gray-50;
+  @apply bg-gold-accent;
+  color: var(--deep-brown);
 }
 
-/* Modal styles */
 .ReactModal__Overlay {
-  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm;
+  @apply fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm;
+  background: rgba(75, 61, 42, 0.5);
 }
 
 .ReactModal__Content {
-  @apply bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl transform transition-all duration-300;
+  background-color: var(--secondary-bg);
+  color: var(--primary-text);
 }
 
-/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition: none !important;
+    animation: none !important;
   }
 }
 
-/* Focus styles for accessibility */
 .focus-visible:focus {
-  @apply outline-none ring-2 ring-gold-accent ring-opacity-50;
+  outline: 2px solid var(--gold-accent);
+  outline-offset: 2px;
 }
 
-/* Loading states */
 .loading-skeleton {
-  @apply animate-pulse bg-gray-200 rounded;
+  background: linear-gradient(90deg, var(--warm-beige) 25%, var(--gold-accent) 50%, var(--warm-beige) 75%);
+  background-size: 200% 100%;
+  animation: loading-skeleton 1.5s infinite linear;
 }
 
-/* Responsive utilities */
+@keyframes loading-skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 @media (max-width: 640px) {
   .hero-content h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
+    font-size: 2rem;
   }
 }
-
 @media (min-width: 768px) {
   .hero-content h1 {
-    font-size: 4rem;
-    line-height: 1.1;
+    font-size: 3rem;
   }
 }
-
 @media (min-width: 1024px) {
   .hero-content h1 {
-    font-size: 5rem;
-    line-height: 1;
+    font-size: 4rem;
   }
 } 
