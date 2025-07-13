@@ -58,6 +58,7 @@ const CartDemo: React.FC = () => {
                   src={item.image}
                   alt={item.name}
                   className="w-full h-32 object-cover rounded-md mb-3"
+                  loading="lazy"
                 />
               )}
               <h4 className="font-medium text-gray-900 mb-1">{item.name}</h4>

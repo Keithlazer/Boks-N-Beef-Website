@@ -85,6 +85,7 @@ const CartTable: React.FC = () => {
                           className="h-10 w-10 rounded-full object-cover"
                           src={item.image}
                           alt={item.name}
+                          loading="lazy"
                         />
                       </div>
                     )}
