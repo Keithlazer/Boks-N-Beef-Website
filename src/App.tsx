@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { CartProvider } from './contexts/CartContext';
-import CartTable from './components/CartTable';
-import CartDemo from './components/CartDemo';
-import HeroSection from './components/HeroSection';
 import { ErrorBoundary } from './components/SharedComponents';
 import './index.css';
+
+const HeroSection = lazy(() => import('./components/HeroSection'));
+const CartDemo = lazy(() => import('./components/CartDemo'));
+const CartTable = lazy(() => import('./components/CartTable'));
 
 const App: React.FC = () => {
   return (
@@ -12,7 +13,9 @@ const App: React.FC = () => {
       <CartProvider>
         <div className="min-h-screen bg-gray-50">
           {/* Enhanced Hero Section */}
-          <HeroSection season="summer" />
+          <Suspense fallback={<div>Loading hero...</div>}>
+            <HeroSection season="summer" />
+          </Suspense>
           
           {/* Main Content */}
           <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
@@ -25,9 +28,12 @@ const App: React.FC = () => {
                   Manage your cattle and beef product selections
                 </p>
               </div>
-              
-              <CartDemo />
-              <CartTable />
+              <Suspense fallback={<div>Loading cart demo...</div>}>
+                <CartDemo />
+              </Suspense>
+              <Suspense fallback={<div>Loading cart table...</div>}>
+                <CartTable />
+              </Suspense>
             </div>
           </div>
         </div>

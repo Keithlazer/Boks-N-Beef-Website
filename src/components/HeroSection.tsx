@@ -14,6 +14,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ season = 'summer' }) => {
   const statsRef = useRef<HTMLDivElement>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; type: string }>>([]);
+  const [showVideo, setShowVideo] = useState(false);
 
   // Initialize GSAP animations
   useEffect(() => {
@@ -72,6 +73,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ season = 'summer' }) => {
     return () => clearInterval(interval);
   }, [season]);
 
+  useEffect(() => {
+    setTimeout(() => setShowVideo(true), 1000); // Defer video load by 1s
+  }, []);
+
   // Video controls
   const toggleVideo = () => {
     const video = heroRef.current?.querySelector('video') as HTMLVideoElement;
@@ -98,17 +103,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ season = 'summer' }) => {
       className={`relative min-h-screen flex items-center justify-center overflow-hidden season-${season}`}
     >
       {/* Video Background */}
-      <video
-        className="hero-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="https://images.unsplash.com/photo-1471194402529-8e0f5a675de6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-      >
-        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {showVideo && (
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="https://images.unsplash.com/photo-1471194402529-8e0f5a675de6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+        >
+          <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
 
       {/* Overlay */}
       <div className="hero-overlay" />
