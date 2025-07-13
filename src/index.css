@@ -25,6 +25,9 @@
   --button-text: var(--white);
   --button-hover-bg: var(--gold-accent);
   --button-hover-text: var(--deep-brown);
+  /* === ACCESSIBILITY & CONTRAST FIXES === */
+  --section-alt-bg: #f9f6f2;
+  --footer-link-hover: var(--gold-accent);
 }
 
 body {
@@ -247,4 +250,258 @@ a:hover {
   .hero-content h1 {
     font-size: 4rem;
   }
+} 
+
+/* === ACCESSIBILITY & CONTRAST FIXES === */
+/* Ensure all body text is readable on light backgrounds */
+body, .section-subtitle, .about-content p, .stat-label, .price-note, .author-info p, .faq-answer p, .form-group label, .form-group input, .form-group select, .form-group textarea {
+  color: var(--primary-text) !important;
+}
+
+/* Use white or gold for text on dark backgrounds */
+.cta, .cta * {
+  color: var(--white) !important;
+}
+
+/* Footer link hover for premium accent */
+footer .footer-links a:hover {
+  color: var(--footer-link-hover) !important;
+}
+
+/* Section alternate backgrounds for separation */
+.cattle, .services, .gallery, .testimonials, .calculator {
+  background-color: var(--section-alt-bg) !important;
+}
+
+/* Card enhancements */
+.cattle-card, .product-card, .service-card, .testimonial-card, .contact-info, .contact-form, .calc-result {
+  box-shadow: 0 4px 24px rgba(75,61,42,0.08), 0 1.5px 6px rgba(198,93,59,0.06);
+  border: 1px solid var(--border-color);
+}
+
+/* Add gold accent border to testimonials */
+.testimonial-card {
+  border-left: 5px solid var(--gold-accent);
+  position: relative;
+}
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2.5rem;
+  color: var(--gold-accent);
+  opacity: 0.3;
+}
+
+/* Button improvements */
+.btn, .btn-green, .btn-outline, .tab-btn, .filter-btn, .calc-tab {
+  box-shadow: 0 2px 8px rgba(75,61,42,0.08);
+  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+.btn:focus, .btn-green:focus, .btn-outline:focus, .tab-btn:focus, .filter-btn:focus, .calc-tab:focus {
+  outline: 2px solid var(--gold-accent);
+  outline-offset: 2px;
+}
+.btn:hover, .btn-green:hover, .btn-outline:hover, .tab-btn:hover, .filter-btn:hover, .calc-tab:hover {
+  box-shadow: 0 4px 16px rgba(75,61,42,0.16);
+}
+
+/* Gallery overlay improvements */
+.gallery-overlay {
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  color: var(--white);
+  text-shadow: 0 2px 8px rgba(75,61,42,0.25);
+  border-top: 2px solid var(--gold-accent);
+}
+@media (max-width: 768px) {
+  .gallery-overlay {
+    background: rgba(0,0,0,0.6);
+    padding: 20px 10px 10px;
+  }
+}
+
+/* Section dividers */
+.section-divider {
+  width: 120px;
+  height: 6px;
+  background: linear-gradient(90deg, var(--gold-accent), var(--ranch-red));
+  border-radius: 3px;
+  margin: 40px auto 30px auto;
+}
+
+/* Subtle fade-in animation for sections */
+.section, .cattle-card, .product-card, .service-card, .testimonial-card, .gallery-item {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Responsive improvements for touch targets and text */
+@media (max-width: 640px) {
+  .btn, .btn-green, .btn-outline, .tab-btn, .filter-btn, .calc-tab {
+    padding: 16px 20px;
+    font-size: 1.1rem;
+  }
+  .section-subtitle, .about-content p, .faq-answer p, .price-note {
+    font-size: 1.05rem;
+  }
+}
+
+/* Hero overlay for better text contrast */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(75,61,42,0.7) 0%, rgba(198,93,59,0.5) 100%);
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Focus states for all interactive elements */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--gold-accent) !important;
+  outline-offset: 2px;
+}
+
+/* Add wavy SVG divider utility */
+.wavy-divider {
+  width: 100%;
+  height: 32px;
+  background: url('data:image/svg+xml;utf8,<svg width="100%" height="32" viewBox="0 0 1440 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 16C120 32 360 32 720 16C1080 0 1320 0 1440 16V32H0V16Z" fill="%23D9A86A"/></svg>') repeat-x;
+  margin: 0;
+  border: none;
+}
+
+/* Premium accent for section headings */
+section h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold-accent), var(--ranch-red));
+  border-radius: 2px;
+  margin: 12px auto 0 auto;
+}
+
+/* Subtle ripple effect for buttons */
+.btn, .btn-green, .btn-outline {
+  position: relative;
+  overflow: hidden;
+}
+.btn:active::after, .btn-green:active::after, .btn-outline:active::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 0; height: 0;
+  background: rgba(217,168,106,0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple 0.5s linear;
+  z-index: 2;
+}
+@keyframes ripple {
+  to {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+/* Ensure all .price, .stat-value, .feature h4 use primary text for clarity */
+.price, .stat-value, .feature h4 {
+  color: var(--primary-text) !important;
+}
+
+/* Add gold accent to .feature i for premium feel */
+.feature i {
+  color: var(--gold-accent) !important;
+}
+
+/* Add gold border to .about-image img for premium look */
+.about-image img {
+  border: 3px solid var(--gold-accent);
+}
+
+/* Add a soft shadow to .hero-content for better contrast */
+.hero-content {
+  text-shadow: 0 2px 8px rgba(75,61,42,0.18);
+}
+
+/* Ensure .footer-column h3 and .footer-links a are readable */
+.footer-column h3, .footer-links a {
+  color: var(--gold-accent) !important;
+}
+
+/* Add a gold border to .footer-content for separation */
+.footer-content {
+  border-top: 3px solid var(--gold-accent);
+  border-bottom: 3px solid var(--gold-accent);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Add a gold accent to .social-links a on hover */
+.social-links a:hover {
+  background: var(--gold-accent) !important;
+  color: var(--deep-brown) !important;
+}
+
+/* Add a gold accent to .tab-btn.active and .filter-btn.active */
+.tab-btn.active, .filter-btn.active {
+  background: var(--gold-accent) !important;
+  color: var(--deep-brown) !important;
+  border-color: var(--gold-accent) !important;
+}
+
+/* Add a gold accent to .calc-tab.active */
+.calc-tab.active {
+  background: var(--gold-accent) !important;
+  color: var(--deep-brown) !important;
+  border-color: var(--gold-accent) !important;
+}
+
+/* Add a gold accent to .btn-outline on hover */
+.btn-outline:hover {
+  background: var(--gold-accent) !important;
+  color: var(--deep-brown) !important;
+  border-color: var(--gold-accent) !important;
+}
+
+/* Add a gold accent to .btn-green on hover */
+.btn-green:hover {
+  background: var(--gold-accent) !important;
+  color: var(--deep-brown) !important;
+}
+
+/* Add a gold accent to .btn on hover */
+.btn:hover {
+  background: var(--gold-accent) !important;
+  color: var(--deep-brown) !important;
+}
+
+/* Add a gold accent to .sizzle-btn on hover */
+.sizzle-btn:hover {
+  background: linear-gradient(45deg, var(--gold-accent), var(--ranch-red)) !important;
+  color: var(--deep-brown) !important;
+}
+
+/* Add a gold accent to .stat on hover */
+.stat:hover {
+  background: var(--gold-accent) !important;
+  color: var(--deep-brown) !important;
 } 
