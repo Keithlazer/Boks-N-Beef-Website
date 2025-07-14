@@ -7,18 +7,130 @@
     <meta name="description" content="BoksNBeef - Premium Cattle Breeding & Artisanal Beef Products. Quality bulls, heifers, and sustainably sourced beef.">
     <meta property="og:title" content="BoksNBeef | Premium Cattle & Artisanal Beef">
     <meta property="og:description" content="Premium Cattle Breeding & Artisanal Beef Products. Quality bulls, heifers, and sustainably sourced beef.">
-    <meta property="og:image" content="assets/cows.jpg>
+    <meta property="og:image" content="assets/cows.jpg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://boksnbeef.com/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BoksNBeef | Premium Cattle & Artisanal Beef">
     <meta name="twitter:description" content="Premium Cattle Breeding & Artisanal Beef Products. Quality bulls, heifers, and sustainably sourced beef.">
     <meta name="twitter:image" content="assets/Mabhena_Meats_20250216_141250_0000_page-0001.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="icon" type="image/png" href="assets/LOGO.png.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/index.css">
+    <style>
+        :root {
+            --font-ranch: 'Playfair Display', serif;
+            --font-ui: 'Lato', sans-serif;
+            --deep-brown: #4B3D2A;
+            --warm-beige: #F5F0E1;
+            --gold-accent: #D9A86A;
+            --ranch-red: #C65D3B;
+            --forest-green: #7A9A7A;
+            --accent-cream: #FFF8F0;
+            --black: #181818;
+            --white: #FFFFFF;
+            --brand-green: var(--forest-green);
+            --beef-red: var(--ranch-red);
+            --gold: var(--gold-accent);
+            --primary-bg: var(--warm-beige);
+            --primary-text: var(--deep-brown);
+            --secondary-bg: var(--accent-cream);
+            --secondary-text: var(--ranch-red);
+        }
+        body {
+            background: var(--primary-bg);
+            color: var(--primary-text);
+            font-family: var(--font-ui);
+            margin: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-ranch);
+            color: var(--deep-brown);
+        }
+        .btn, .btn-primary, .btn-secondary, .btn-accent {
+            font-family: var(--font-ui);
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            margin: 0.25rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: var(--ranch-red);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background: var(--gold-accent);
+            color: var(--deep-brown);
+        }
+        .btn-secondary {
+            background: var(--forest-green);
+            color: var(--white);
+        }
+        .btn-secondary:hover {
+            background: var(--gold-accent);
+            color: var(--deep-brown);
+        }
+        .btn-accent {
+            background: var(--gold-accent);
+            color: var(--deep-brown);
+        }
+        .btn-accent:hover {
+            background: var(--ranch-red);
+            color: var(--white);
+        }
+        .card {
+            background: var(--secondary-bg);
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(75,61,42,0.07);
+            padding: 1.5rem;
+        }
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-accent), transparent);
+            border-radius: 2px;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .footer-content, .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .footer-column {
+            flex: 1 1 200px;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        @media (max-width: 900px) {
+            .footer-content, .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Loader -->
@@ -30,21 +142,21 @@
         </div>
     </div>
     <!-- Back to Top Button -->
-    <button id="backToTop" aria-label="Back to top" class="btn"><i class="fas fa-arrow-up"></i></button>
+    <button id="backToTop" aria-label="Back to top" class="btn btn-primary"><i class="fas fa-arrow-up" style="color: var(--gold-accent);"></i></button>
     <!-- Header -->
     <header id="header" role="banner">
-        <div class="container">
-            <div class="logo">
-                <div class="logo-img-wrapper">
-                    <img src="assets/LOGO.png.jpg" alt="BoksNBeef Logo" class="logo-img" width="64" height="64">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0;">
+            <div class="logo" style="display: flex; align-items: center;">
+                <div class="logo-img-wrapper" style="border: 2px solid var(--gold-accent); border-radius: 12px; padding: 4px; margin-right: 1rem;">
+                    <img src="assets/LOGO.png.jpg" alt="BoksNBeef Logo" class="logo-img" width="64" height="64" loading="eager" fetchpriority="high">
                 </div>
                 <div class="logo-text">
-                    <h1>Boks N' Beef</h1>
-                    <p class="logo-tagline">More Than Just Meat</p>
+                    <h1 style="margin: 0;">Boks N' Beef</h1>
+                    <p class="logo-tagline" style="margin: 0; color: var(--ranch-red); font-weight: 600;">More Than Just Meat</p>
                 </div>
             </div>
             <nav role="navigation" aria-label="Main navigation">
-                <ul id="mainNav">
+                <ul id="mainNav" style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#cattle">Cattle</a></li>
                     <li><a href="#beef">Beef</a></li>
@@ -53,37 +165,38 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="mobile-menu" aria-label="Open menu" aria-controls="mainNav" aria-expanded="false"><i class="fas fa-bars"></i></button>
+                <button class="mobile-menu btn btn-primary" aria-label="Open menu" aria-controls="mainNav" aria-expanded="false" style="margin-left: 1rem;"><i class="fas fa-bars" style="color: var(--gold-accent);"></i></button>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" style="padding: 4rem 0 2rem 0; background: linear-gradient(135deg, rgba(75,61,42,0.95) 0%, rgba(198,93,59,0.85) 100%); color: var(--white); text-align: center;">
         <div class="hero-content">
-            <h1>Premium Cattle & Exceptional Beef</h1>
-            <p>Breeding excellence in livestock and crafting the finest beef products</p>
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">Premium Cattle & Exceptional Beef</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Breeding excellence in livestock and crafting the finest beef products</p>
             <div class="hero-btns">
-                <a href="#cattle" class="btn btn-green">Explore Our Cattle</a>
-                <a href="#beef" class="btn sizzle-btn">Discover Our Beef</a>
+                <a href="#cattle" class="btn btn-primary">Explore Our Cattle</a>
+                <a href="#beef" class="btn btn-secondary">Discover Our Beef</a>
             </div>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- Cattle Section -->
     <section class="cattle" id="cattle">
         <div class="container">
             <h2>Premium Cattle Selection</h2>
             <p class="section-subtitle">Top-quality breeding stock for your farm or ranch</p>
-            
-            <div class="cattle-grid">
-                <div class="cattle-card">
-                    <span class="cattle-badge">Breeding Bull</span>
-                    <img src="assets/brahman.jpg" alt="Brahman Bull" width="600" height="250" loading="lazy">
+            <div class="cattle-grid" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+                <div class="cattle-card card" style="border: 1.5px solid var(--gold-accent); flex: 1 1 300px;">
+                    <span class="cattle-badge" style="background: var(--gold-accent); color: var(--deep-brown); padding: 0.25rem 0.75rem; border-radius: 8px; font-weight: 600;">Breeding Bull</span>
+                    <img src="assets/brahman.jpg" alt="Brahman Bull" width="600" height="250" loading="lazy" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
                     <div class="cattle-info">
                         <h3>Brahman Bull</h3>
                         <p>Premium genetics with excellent heat tolerance and adaptability</p>
-                        <div class="cattle-stats">
+                        <div class="cattle-stats" style="display: flex; gap: 1rem;">
                             <div class="stat">
                                 <div class="stat-value">4 Years</div>
                                 <div class="stat-label">Age</div>
@@ -97,17 +210,16 @@
                                 <div class="stat-label">Health</div>
                             </div>
                         </div>
-                        <a href="#contact" class="btn btn-green">Inquire Now</a>
+                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
                     </div>
                 </div>
-                
-                <div class="cattle-card">
-                    <span class="cattle-badge">Heifer</span>
-                    <img src="assets/Angus Heifer.jpg" alt="Angus Heifer" width="600" height="250" loading="lazy">
+                <div class="cattle-card card" style="border: 1.5px solid var(--gold-accent); flex: 1 1 300px;">
+                    <span class="cattle-badge" style="background: var(--gold-accent); color: var(--deep-brown); padding: 0.25rem 0.75rem; border-radius: 8px; font-weight: 600;">Heifer</span>
+                    <img src="assets/Angus Heifer.jpg" alt="Angus Heifer" width="600" height="250" loading="lazy" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
                     <div class="cattle-info">
                         <h3>Angus Heifer</h3>
                         <p>Excellent maternal qualities with superior marbling genetics</p>
-                        <div class="cattle-stats">
+                        <div class="cattle-stats" style="display: flex; gap: 1rem;">
                             <div class="stat">
                                 <div class="stat-value">18 Months</div>
                                 <div class="stat-label">Age</div>
@@ -121,17 +233,16 @@
                                 <div class="stat-label">Health</div>
                             </div>
                         </div>
-                        <a href="#contact" class="btn btn-green">Inquire Now</a>
+                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
                     </div>
                 </div>
-                
-                <div class="cattle-card">
-                    <span class="cattle-badge">Steer</span>
-                    <img src="assets/Hereford Steer.jpg" alt="Hereford Steer" width="600" height="250" loading="lazy">
+                <div class="cattle-card card" style="border: 1.5px solid var(--gold-accent); flex: 1 1 300px;">
+                    <span class="cattle-badge" style="background: var(--gold-accent); color: var(--deep-brown); padding: 0.25rem 0.75rem; border-radius: 8px; font-weight: 600;">Steer</span>
+                    <img src="assets/Hereford Steer.jpg" alt="Hereford Steer" width="600" height="250" loading="lazy" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
                     <div class="cattle-info">
                         <h3>Hereford Steer</h3>
                         <p>Hardy, efficient grazer with excellent feed conversion</p>
-                        <div class="cattle-stats">
+                        <div class="cattle-stats" style="display: flex; gap: 1rem;">
                             <div class="stat">
                                 <div class="stat-value">20 Months</div>
                                 <div class="stat-label">Age</div>
@@ -145,112 +256,101 @@
                                 <div class="stat-label">Health</div>
                             </div>
                         </div>
-                        <a href="#contact" class="btn btn-green">Inquire Now</a>
+                        <a href="#contact" class="btn btn-primary">Inquire Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- Beef Products Section -->
     <section class="beef" id="beef">
-        <div class="container">
+        <div class="container" style="background: var(--secondary-bg); border-radius: 18px; box-shadow: 0 2px 16px rgba(75,61,42,0.07); padding: 2rem 1rem;">
             <h2>Artisanal Beef Products</h2>
             <p class="section-subtitle">Premium cuts from our ethically raised cattle</p>
-            
-            <div class="product-grid">
-                <div class="product-card">
-                    <span class="product-badge" data-tooltip="Aged to perfection in our climate-controlled cellar">Signature Cut</span>
-                    <img src="assets/ribeye.jpg" alt="Ribeye Steak">
+            <div class="product-grid" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+                <div class="product-card card" style="border: 1.5px solid var(--gold-accent); flex: 1 1 300px;">
+                    <span class="product-badge" style="background: var(--gold-accent); color: var(--deep-brown); padding: 0.25rem 0.75rem; border-radius: 8px; font-weight: 600;" data-tooltip="Aged to perfection in our climate-controlled cellar">Signature Cut</span>
+                    <img src="assets/ribeye.jpg" alt="Ribeye Steak" width="600" height="400" loading="lazy" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
                     <div class="product-info">
                         <h3>Dry-Aged Ribeye</h3>
                         <p>28-day dry-aged, well-marbled for exceptional flavor</p>
-                        <span class="price">$42.99/Kg</span>
-                        <a href="#contact" class="btn">Order Now</a>
+                        <span class="price" style="font-weight: bold;">$42.99/Kg</span>
+                        <a href="#contact" class="btn btn-secondary">Order Now</a>
                     </div>
                 </div>
-                
-                <div class="product-card">
-                    <img src="assets/tenderloin.jpg" alt="Tenderloin">
+                <div class="product-card card" style="border: 1.5px solid var(--gold-accent); flex: 1 1 300px;">
+                    <img src="assets/tenderloin.jpg" alt="Tenderloin" width="600" height="400" loading="lazy" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
                     <div class="product-info">
                         <h3>Beef Tenderloin</h3>
                         <p>The most tender cut, perfect for special occasions</p>
-                        <span class="price">$49.99/Kg</span>
-                        <a href="#contact" class="btn">Order Now</a>
+                        <span class="price" style="font-weight: bold;">$49.99/Kg</span>
+                        <a href="#contact" class="btn btn-secondary">Order Now</a>
                     </div>
                 </div>
-                
-                <div class="product-card">
-                    <span class="product-badge">New</span>
-                    <img src="assets/ground beef.jpg" alt="Wagyu Beef">
+                <div class="product-card card" style="border: 1.5px solid var(--gold-accent); flex: 1 1 300px;">
+                    <span class="product-badge" style="background: var(--gold-accent); color: var(--deep-brown); padding: 0.25rem 0.75rem; border-radius: 8px; font-weight: 600;">New</span>
+                    <img src="assets/ground beef.jpg" alt="Wagyu Beef" width="600" height="400" loading="lazy" style="width: 100%; border-radius: 8px; margin: 1rem 0;">
                     <div class="product-info">
                         <h3>Premium Ground Beef</h3>
                         <p>80/20 blend perfect for burgers and meat sauces</p>
-                        <span class="price">$24.99/Kg</span>
-                        <a href="#contact" class="btn">Order Now</a>
+                        <span class="price" style="font-weight: bold;">$24.99/Kg</span>
+                        <a href="#contact" class="btn btn-secondary">Order Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
+        <div class="section-divider"></div>
         <div class="container">
             <h2>Our Ranch & Products</h2>
             <p class="section-subtitle">Take a visual tour of our facilities and premium cattle</p>
-            
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="cattle">Cattle</button>
-                <button class="filter-btn" data-filter="beef">Beef Products</button>
-                <button class="filter-btn" data-filter="ranch">Ranch</button>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="cattle">
-                    <img src="assets/WhatsApp Image 2025-03-30 at 14.34.33.jpeg" alt="Premium Brahman Bull" loading="lazy">
-                    <div class="gallery-overlay">
+            <div class="gallery-grid" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+                <div class="gallery-item" data-category="cattle" style="flex: 1 1 300px;">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.34.33.jpeg" alt="Premium Brahman Bull" width="600" height="400" loading="lazy" style="width: 100%; border-radius: 8px;">
+                    <div class="gallery-overlay" style="background: rgba(75,61,42,0.65); color: var(--gold-accent); padding: 1rem; border-radius: 0 0 8px 8px;">
                         <h4>Premium Brahman Bull</h4>
                         <p>4 years old, excellent genetics</p>
                     </div>
                 </div>
-                
-                <div class="gallery-item" data-category="cattle">
-                    <img src="assets/WhatsApp Image 2025-03-30 at 14.34.58.jpeg" alt="Angus Heifer" loading="lazy">
-                    <div class="gallery-overlay">
+                <div class="gallery-item" data-category="cattle" style="flex: 1 1 300px;">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.34.58.jpeg" alt="Angus Heifer" width="600" height="400" loading="lazy" style="width: 100%; border-radius: 8px;">
+                    <div class="gallery-overlay" style="background: rgba(75,61,42,0.65); color: var(--gold-accent); padding: 1rem; border-radius: 0 0 8px 8px;">
                         <h4>Angus Heifer</h4>
                         <p>18 months, superior marbling</p>
                     </div>
                 </div>
-                
-                <div class="gallery-item" data-category="beef">
-                    <img src="assets/WhatsApp Image 2025-03-30 at 14.35.12.jpeg" alt="Dry-Aged Ribeye" loading="lazy">
-                    <div class="gallery-overlay">
+                <div class="gallery-item" data-category="beef" style="flex: 1 1 300px;">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.35.12.jpeg" alt="Dry-Aged Ribeye" width="600" height="400" loading="lazy" style="width: 100%; border-radius: 8px;">
+                    <div class="gallery-overlay" style="background: rgba(75,61,42,0.65); color: var(--gold-accent); padding: 1rem; border-radius: 0 0 8px 8px;">
                         <h4>Dry-Aged Ribeye</h4>
                         <p>28-day aged perfection</p>
                     </div>
                 </div>
-                
-                <div class="gallery-item" data-category="beef">
-                    <img src="assets/WhatsApp Image 2025-03-30 at 14.35.44.jpeg" alt="Premium Cuts" loading="lazy">
-                    <div class="gallery-overlay">
+                <div class="gallery-item" data-category="beef" style="flex: 1 1 300px;">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.35.44.jpeg" alt="Premium Cuts" width="600" height="400" loading="lazy" style="width: 100%; border-radius: 8px;">
+                    <div class="gallery-overlay" style="background: rgba(75,61,42,0.65); color: var(--gold-accent); padding: 1rem; border-radius: 0 0 8px 8px;">
                         <h4>Premium Cuts</h4>
                         <p>Hand-selected quality</p>
                     </div>
                 </div>
-                
-                <div class="gallery-item" data-category="ranch">
-                    <img src="assets/WhatsApp Image 2025-03-30 at 14.36.11.jpeg" alt="Our Ranch" loading="lazy">
-                    <div class="gallery-overlay">
+                <div class="gallery-item" data-category="ranch" style="flex: 1 1 300px;">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.36.11.jpeg" alt="Our Ranch" width="600" height="400" loading="lazy" style="width: 100%; border-radius: 8px;">
+                    <div class="gallery-overlay" style="background: rgba(75,61,42,0.65); color: var(--gold-accent); padding: 1rem; border-radius: 0 0 8px 8px;">
                         <h4>Our Ranch</h4>
                         <p>Sustainable grazing practices</p>
                     </div>
                 </div>
-                
-                <div class="gallery-item" data-category="ranch">
-                    <img src="assets/WhatsApp Image 2025-03-30 at 14.36.52.jpeg" alt="Facilities" loading="lazy">
-                    <div class="gallery-overlay">
+                <div class="gallery-item" data-category="ranch" style="flex: 1 1 300px;">
+                    <img src="assets/WhatsApp Image 2025-03-30 at 14.36.52.jpeg" alt="Facilities" width="600" height="400" loading="lazy" style="width: 100%; border-radius: 8px;">
+                    <div class="gallery-overlay" style="background: rgba(75,61,42,0.65); color: var(--gold-accent); padding: 1rem; border-radius: 0 0 8px 8px;">
                         <h4>Processing Facilities</h4>
                         <p>State-of-the-art equipment</p>
                     </div>
@@ -259,32 +359,31 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="services" id="services" style="background: var(--primary-bg); border-radius: 18px; margin-top: 2rem;">
         <div class="container">
             <h2>Our Services</h2>
             <p class="section-subtitle">Comprehensive solutions for cattle farmers and beef enthusiasts</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
+            <div class="services-grid" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+                <div class="service-card card" style="border: 1.5px solid var(--gold-accent); flex: 1 1 250px;">
                     <div class="service-icon">
-                        <i class="fas fa-syringe"></i>
+                        <i class="fas fa-syringe" style="color: var(--gold-accent); font-size: 2rem;"></i>
                     </div>
                     <h3>Breeding & Insemination</h3>
                     <p>Professional artificial insemination services with premium genetics from top bloodlines.</p>
                 </div>
-                
-                <div class="service-card">
+                <div class="service-card card" style="border: 1.5px solid var(--gold-accent); flex: 1 1 250px;">
                     <div class="service-icon">
-                        <i class="fas fa-clipboard-check"></i>
+                        <i class="fas fa-clipboard-check" style="color: var(--gold-accent); font-size: 2rem;"></i>
                     </div>
                     <h3>Farm Consultations</h3>
                     <p>Expert advice on herd management, nutrition, and sustainable farming practices.</p>
                 </div>
-                
-                <div class="service-card">
+                <div class="service-card card" style="border: 1.5px solid var(--gold-accent); flex: 1 1 250px;">
                     <div class="service-icon">
-                        <i class="fas fa-truck"></i>
+                        <i class="fas fa-truck" style="color: var(--gold-accent); font-size: 2rem;"></i>
                     </div>
                     <h3>Delivery Services</h3>
                     <p>Reliable transportation for both live cattle and packaged beef products.</p>
@@ -293,413 +392,57 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="container">
-            <h2>Our Heritage</h2>
-            <p class="section-subtitle">Bridging superior cattle breeding with premium beef production</p>
-            
-            <div class="container">
-                <div class="about-content">
-                    <p>Founded in 2024, BoksNBeef combines generations of ranching expertise with modern meat science. We operate a vertically integrated operation where we control every aspect from breeding to processing.</p>
-                    <p>Our breeding program focuses on developing cattle with superior genetics for both meat quality and robust health. We carefully select bulls and heifers based on performance data, EPDs, and conformation.</p>
-                    <p>For our beef products, we implement a 28-45 day dry-aging process that enhances flavor and tenderness, ensuring only the highest quality reaches your table.</p>
-                    
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-dna"></i>
-                            <h4>Genetics</h4>
-                            <p>Superior bloodlines with proven performance</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-leaf"></i>
-                            <h4>Sustainability</h4>
-                            <p>Ethical grazing and regenerative practices</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-award"></i>
-                            <h4>Quality</h4>
-                            <p>Consistent premium-grade beef</p>
-                        </div>
+        <div class="section-divider"></div>
+        <div class="container" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+            <div class="about-content" style="flex: 2 1 350px;">
+                <h2>Our Heritage</h2>
+                <p class="section-subtitle">Bridging superior cattle breeding with premium beef production</p>
+                <p>Founded in 2024, BoksNBeef combines generations of ranching expertise with modern meat science. We operate a vertically integrated operation where we control every aspect from breeding to processing.</p>
+                <p>Our breeding program focuses on developing cattle with superior genetics for both meat quality and robust health. We carefully select bulls and heifers based on performance data, EPDs, and conformation.</p>
+                <p>For our beef products, we implement a 28-45 day dry-aging process that enhances flavor and tenderness, ensuring only the highest quality reaches your table.</p>
+                <div class="features" style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
+                    <div class="feature" style="flex: 1 1 100px; background: var(--secondary-bg); border-radius: 12px; box-shadow: 0 2px 8px rgba(75,61,42,0.07); padding: 1rem; border: 1.5px solid var(--gold-accent); text-align: center;">
+                        <i class="fas fa-dna" style="color: var(--gold-accent); font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <h4 style="margin: 0.5rem 0;">Genetics</h4>
+                        <p style="margin: 0;">Superior bloodlines with proven performance</p>
+                    </div>
+                    <div class="feature" style="flex: 1 1 100px; background: var(--secondary-bg); border-radius: 12px; box-shadow: 0 2px 8px rgba(75,61,42,0.07); padding: 1rem; border: 1.5px solid var(--gold-accent); text-align: center;">
+                        <i class="fas fa-leaf" style="color: var(--gold-accent); font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <h4 style="margin: 0.5rem 0;">Sustainability</h4>
+                        <p style="margin: 0;">Ethical grazing and regenerative practices</p>
+                    </div>
+                    <div class="feature" style="flex: 1 1 100px; background: var(--secondary-bg); border-radius: 12px; box-shadow: 0 2px 8px rgba(75,61,42,0.07); padding: 1rem; border: 1.5px solid var(--gold-accent); text-align: center;">
+                        <i class="fas fa-award" style="color: var(--gold-accent); font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <h4 style="margin: 0.5rem 0;">Quality</h4>
+                        <p style="margin: 0;">Consistent premium-grade beef</p>
                     </div>
                 </div>
-                
-                <div class="about-image">
-                    <img src="assets/LOGO.png.jpg" alt="Our Ranch">
-                </div>
+            </div>
+            <div class="about-image" style="border: 2px solid var(--gold-accent); border-radius: 16px; padding: 6px; background: var(--secondary-bg); box-shadow: 0 2px 16px rgba(75,61,42,0.07); flex: 1 1 250px; display: flex; justify-content: center;">
+                <img src="assets/LOGO.png.jpg" alt="Our Ranch" style="border-radius: 12px; max-width: 100%; height: auto;" width="300" height="300" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Experience Premium Quality?</h2>
-                <p>Whether you're looking for breeding stock to improve your herd or premium beef for your table, we're here to help you achieve excellence.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-green">Get Started Today</a>
-                    <a href="#gallery" class="btn btn-outline">View Our Gallery</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2>What Our Clients Say</h2>
-            <p class="section-subtitle">Trusted by farmers, ranchers, and top chefs</p>
-            
-            <div class="testimonial-grid" id="testimonialCarousel" aria-live="polite">
-                <div class="testimonial-card" tabindex="0">
-                    <p>The Brahman bull I purchased from BoksNBeef has transformed my herd. His offspring show incredible growth rates and adaptability to our climate.</p>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John D. - Cattle Rancher" width="50" height="50" loading="lazy">
-                        <div class="author-info">
-                            <h4>John D.</h4>
-                            <p>Cattle Rancher</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" tabindex="0">
-                    <p>As a chef, I demand the best. BoksNBeef consistently delivers exceptional dry-aged beef with perfect marbling and flavor depth.</p>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K. - Executive Chef" width="50" height="50" loading="lazy">
-                        <div class="author-info">
-                            <h4>Sarah K.</h4>
-                            <p>Executive Chef</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card" tabindex="0">
-                    <p>Their AI services helped us improve our herd genetics significantly. Professional, knowledgeable, and always available for consultation.</p>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Robert M. - Dairy Farmer" width="50" height="50" loading="lazy">
-                        <div class="author-info">
-                            <h4>Robert M.</h4>
-                            <p>Dairy Farmer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button id="prevTestimonial" aria-label="Previous testimonial" class="btn btn-outline testimonial-nav-btn">&lt;</button>
-            <button id="nextTestimonial" aria-label="Next testimonial" class="btn btn-outline testimonial-nav-btn">&gt;</button>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <p class="section-subtitle">Common questions about our cattle and beef products</p>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
-                        <span>What breeds of cattle do you specialize in?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer" id="faq-answer-1">
-                        <p>We specialize in Brahman, Angus, and Hereford breeds. Our Brahman cattle excel in heat tolerance and adaptability, while our Angus provide superior marbling and meat quality. Hereford cattle offer excellent feed efficiency and hardiness.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
-                        <span>How long do you age your beef?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer" id="faq-answer-2">
-                        <p>Our beef is dry-aged for 28-45 days in our climate-controlled aging room. This process enhances flavor, tenderness, and creates a more concentrated beef taste. Premium cuts like ribeye receive extended aging for maximum flavor development.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
-                        <span>Do you offer delivery services?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer" id="faq-answer-3">
-                        <p>Yes, we provide delivery services for both live cattle and packaged beef products. We serve the greater Harare area and surrounding regions. Delivery fees vary based on distance and order size. Contact us for specific pricing.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
-                        <span>What is your breeding program like?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer" id="faq-answer-4">
-                        <p>Our breeding program focuses on genetic excellence and performance. We use artificial insemination with semen from top-performing bulls, maintain detailed EPD records, and select for traits like growth rate, marbling, and maternal qualities.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
-                        <span>How do you ensure beef quality?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer" id="faq-answer-5">
-                        <p>Quality starts with our breeding program and continues through careful feeding, humane handling, and precise processing. We follow strict protocols for food safety and quality control, with regular testing and monitoring throughout the process.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
-                        <span>Can I visit your ranch?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer" id="faq-answer-6">
-                        <p>Yes, we welcome visitors by appointment. Ranch tours are available Monday through Friday, 9 AM to 4 PM. Please contact us at least 24 hours in advance to schedule your visit and ensure we can provide you with the best experience.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Calculator Section -->
-    <section class="calculator" id="calculator">
-        <div class="container">
-            <h2>Pricing Calculator</h2>
-            <p class="section-subtitle">Get an estimate for your cattle or beef order</p>
-            
-            <div class="calculator-container">
-                <div class="calculator-tabs">
-                    <button class="calc-tab active" data-calc="cattle">Cattle Pricing</button>
-                    <button class="calc-tab" data-calc="beef">Beef Pricing</button>
-                </div>
-                
-                <div class="calculator-content">
-                    <div class="calc-section active" id="cattle-calc">
-                        <div class="calc-form">
-                            <div class="form-group">
-                                <label for="cattle-type-calc">Cattle Type</label>
-                                <select id="cattle-type-calc">
-                                    <option value="">Select Type</option>
-                                    <option value="bull">Breeding Bull</option>
-                                    <option value="heifer">Heifer</option>
-                                    <option value="steer">Steer</option>
-                                    <option value="cow">Cow</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="cattle-breed-calc">Breed</label>
-                                <select id="cattle-breed-calc">
-                                    <option value="">Select Breed</option>
-                                    <option value="brahman">Brahman</option>
-                                    <option value="angus">Angus</option>
-                                    <option value="hereford">Hereford</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="cattle-weight">Weight (kg)</label>
-                                <input type="number" id="cattle-weight" min="200" max="1200" placeholder="Enter weight">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="cattle-quantity">Quantity</label>
-                                <input type="number" id="cattle-quantity" min="1" value="1">
-                            </div>
-                            
-                            <button class="btn btn-green" onclick="calculateCattlePrice()">Calculate Price</button>
-                        </div>
-                        
-                        <div class="calc-result" id="cattle-result">
-                            <h3>Estimated Price</h3>
-                            <div class="price-display">
-                                <span class="currency">$</span>
-                                <span class="amount" id="cattle-price">0</span>
-                            </div>
-                            <p class="price-note">*Prices are estimates. Contact us for exact pricing and availability.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="calc-section" id="beef-calc">
-                        <div class="calc-form">
-                            <div class="form-group">
-                                <label for="beef-cut">Beef Cut</label>
-                                <select id="beef-cut">
-                                    <option value="">Select Cut</option>
-                                    <option value="ribeye">Dry-Aged Ribeye</option>
-                                    <option value="tenderloin">Beef Tenderloin</option>
-                                    <option value="ground">Ground Beef</option>
-                                    <option value="sirloin">Sirloin Steak</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="beef-weight">Weight (kg)</label>
-                                <input type="number" id="beef-weight" min="0.5" step="0.5" placeholder="Enter weight">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="beef-quantity">Quantity</label>
-                                <input type="number" id="beef-quantity" min="1" value="1">
-                            </div>
-                            
-                            <button class="btn btn-green" onclick="calculateBeefPrice()">Calculate Price</button>
-                        </div>
-                        
-                        <div class="calc-result" id="beef-result">
-                            <h3>Estimated Price</h3>
-                            <div class="price-display">
-                                <span class="currency">$</span>
-                                <span class="amount" id="beef-price">0</span>
-                            </div>
-                            <p class="price-note">*Prices include basic packaging. Delivery fees may apply.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Get In Touch With Us</h2>
-            <p class="section-subtitle">We'd love to discuss your cattle or beef needs</p>
-            
-            <div class="tabs" role="tablist">
-                <button class="tab-btn active" data-tab="cattle-contact" role="tab" aria-selected="true" aria-controls="cattle-contact" tabindex="0">Cattle Inquiry</button>
-                <button class="tab-btn" data-tab="beef-contact" role="tab" aria-selected="false" aria-controls="beef-contact" tabindex="-1">Beef Products</button>
-                <button class="tab-btn" data-tab="services-contact" role="tab" aria-selected="false" aria-controls="services-contact" tabindex="-1">Services</button>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Glendale 15 Estate</p>
-                    <p><i class="fas fa-phone"></i> 0775935650</p>
-                    <p><i class="fas fa-envelope"></i> boksnbeef@yahoo.com</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM | Sat: 10AM - 4PM</p>
-                    
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form id="contactForm" autocomplete="off" novalidate>
-                        <div class="tab-content active" id="cattle-contact">
-                            <div class="form-group">
-                                <label for="cattle-type">Cattle Type Interest</label>
-                                <select id="cattle-type" name="cattle-type" required>
-                                    <option value="">Select Type</option>
-                                    <option value="bull">Breeding Bull</option>
-                                    <option value="heifer">Heifer</option>
-                                    <option value="steer">Steer</option>
-                                    <option value="cow">Cow</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="breed">Preferred Breed</label>
-                                <input type="text" id="breed" name="breed" placeholder="Brahman, Angus, etc.">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="quantity">Quantity Needed</label>
-                                <input type="number" id="quantity" name="quantity" min="1">
-                            </div>
-                        </div>
-                        
-                        <div class="tab-content" id="beef-contact">
-                            <div class="form-group">
-                                <label for="product-interest">Product Interest</label>
-                                <select id="product-interest" name="product-interest">
-                                    <option value="">Select Product</option>
-                                    <option value="ribeye">Dry-Aged Ribeye</option>
-                                    <option value="tenderloin">Beef Tenderloin</option>
-                                    <option value="ground">Ground Beef</option>
-                                    <option value="other">Other Cuts</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="quantity-kg">Quantity (Kg)</label>
-                                <input type="number" id="quantity-kg" name="quantity-kg" min="1">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="delivery-date">Preferred Delivery Date</label>
-                                <input type="date" id="delivery-date" name="delivery-date">
-                            </div>
-                        </div>
-                        
-                        <div class="tab-content" id="services-contact">
-                            <div class="form-group">
-                                <label for="service-type">Service Needed</label>
-                                <select id="service-type" name="service-type">
-                                    <option value="">Select Service</option>
-                                    <option value="ai">Artificial Insemination</option>
-                                    <option value="consultation">Farm Consultation</option>
-                                    <option value="delivery">Transportation</option>
-                                    <option value="other">Other Service</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="herd-size">Herd Size</label>
-                                <input type="number" id="herd-size" name="herd-size" min="1">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="location">Farm Location</label>
-                                <input type="text" id="location" name="location">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">Send Inquiry</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="section-divider"></div>
 
     <!-- Footer -->
-    <footer>
+    <footer style="border-top: 4px solid var(--gold-accent); background: var(--primary-bg);">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>BoksNBeef</h3>
                     <p>Premium cattle breeding and artisanal beef production. Excellence from pasture to plate.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <div class="social-links" style="margin-top: 1rem;">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" style="color: var(--gold-accent); font-size: 1.5rem; margin-right: 0.5rem;"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" style="color: var(--gold-accent); font-size: 1.5rem; margin-right: 0.5rem;"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" style="color: var(--gold-accent); font-size: 1.5rem; margin-right: 0.5rem;"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
@@ -712,7 +455,6 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Information</h3>
                     <ul class="footer-links">
@@ -723,24 +465,20 @@
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Newsletter</h3>
                     <p>Subscribe for cattle market updates, beef specials, and farming tips.</p>
                     <form>
-                        <input type="email" placeholder="Enter your email">
-                        <button type="submit" class="btn">Subscribe</button>
+                        <input type="email" placeholder="Enter your email" style="padding: 0.5rem; border-radius: 6px; border: 1px solid var(--gold-accent); margin-bottom: 0.5rem;">
+                        <button type="submit" class="btn btn-accent" style="margin-left: 0.5rem;">Subscribe</button>
                     </form>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2025 BoksNBeef. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" defer></script>
 </body>
 </html>
-<!DOCTYPE html>
