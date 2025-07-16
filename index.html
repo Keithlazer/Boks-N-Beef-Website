@@ -226,6 +226,7 @@
             background: linear-gradient(90deg, var(--ranch-red) 70%, var(--deep-brown) 100%);
             color: var(--white);
             box-shadow: 0 2px 8px rgba(75,61,42,0.08);
+            border-bottom: 1px solid var(--border-color);
         }
         .container.header-flex {
             display: flex;
@@ -280,21 +281,20 @@
         }
         @media (max-width: 900px) {
             .container.header-flex {
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
                 gap: 1rem;
             }
             nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-                width: 100%;
+                flex-direction: row;
+                gap: 1.2rem;
+                width: auto;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
             }
             .mobile-menu {
-                display: inline-block;
-                margin-left: 1rem;
+                display: none;
             }
             .hero-content {
                 align-items: center !important;
@@ -453,50 +453,9 @@
                 font-size: 4rem !important;
             }
         }
-        /* Loader: Cow SVG Animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(255,255,255,0.85);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
-        .cow-loader svg {
-            display: block;
-            margin: 0 auto;
-            animation: cowBounce 1.2s infinite ease-in-out;
-        }
-        @keyframes cowBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
     </style>
 </head>
 <body>
-    <!-- Loader -->
-    <div class="loader" role="status" aria-live="polite">
-        <div class="cow-loader" aria-label="Loading">
-            <svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="32" cy="40" rx="18" ry="6" fill="#4B3D2A" opacity="0.15"/>
-                <ellipse cx="32" cy="28" rx="20" ry="12" fill="#fff" stroke="#4B3D2A" stroke-width="2"/>
-                <ellipse cx="32" cy="28" rx="10" ry="7" fill="#C65D3B"/>
-                <ellipse cx="22" cy="24" rx="3" ry="2" fill="#4B3D2A"/>
-                <ellipse cx="42" cy="24" rx="3" ry="2" fill="#4B3D2A"/>
-                <ellipse cx="27" cy="32" rx="2" ry="1.2" fill="#181818"/>
-                <ellipse cx="37" cy="32" rx="2" ry="1.2" fill="#181818"/>
-                <ellipse cx="32" cy="36" rx="3" ry="1.2" fill="#181818"/>
-                <ellipse cx="16" cy="18" rx="4" ry="2" fill="#fff" stroke="#4B3D2A" stroke-width="1.5"/>
-                <ellipse cx="48" cy="18" rx="4" ry="2" fill="#fff" stroke="#4B3D2A" stroke-width="1.5"/>
-                <ellipse cx="16" cy="18" rx="1.2" ry="0.7" fill="#4B3D2A"/>
-                <ellipse cx="48" cy="18" rx="1.2" ry="0.7" fill="#4B3D2A"/>
-            </svg>
-        </div>
-    </div>
     <!-- Back to Top Button -->
     <button id="backToTop" aria-label="Back to top" class="btn btn-primary"><i class="fas fa-arrow-up" style="color: var(--gold-accent);"></i></button>
     <!-- Header -->
@@ -531,7 +490,7 @@
         <img src="assets/cows.jpg" alt="Cattle on Ranch" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; margin: 0; padding: 0;">
         <div class="hero-content" style="position: relative; z-index: 1; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 350px;">
             <h1 style="margin-bottom: 1rem;">Premium Cattle & Exceptional Beef</h1>
-            <p style="margin-bottom: 2rem;">Breeding excellence in livestock and crafting the finest beef products</p>
+            <p style="margin-bottom: 2rem; color: #181818;">Breeding excellence in livestock and crafting the finest beef products</p>
             <div class="hero-btns">
                 <a href="#cattle" class="btn btn-primary">Explore Our Cattle</a>
                 <a href="#beef" class="btn btn-secondary">Discover Our Beef</a>
