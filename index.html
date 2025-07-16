@@ -43,6 +43,15 @@
             --secondary-text: var(--ranch-red);
             --section-alt-bg: #ede6d6; /* New: alternate section background */
             --overlay-dark: rgba(75, 61, 42, 0.85); /* New: for overlays */
+            --footer-red: #a32020;
+            --footer-icon: #ffd700;
+            --footer-text: #fff;
+            --footer-link: #ffd700;
+            --footer-link-hover: #fff;
+            --gallery-overlay-bg: rgba(45, 26, 26, 0.92);
+            --gallery-overlay-text: #fff;
+            --feature-bg: #fff8f0;
+            --feature-border: #d7263d;
         }
         body {
             background: var(--primary-bg);
@@ -73,38 +82,35 @@
             box-shadow: 0 2px 8px rgba(75,61,42,0.07);
         }
         .btn-primary {
-            background: var(--ranch-red);
+            background: linear-gradient(90deg, var(--ranch-red), var(--gold-accent));
             color: var(--white);
         }
         .btn-primary:hover, .btn-primary:focus {
             background: var(--gold-accent);
             color: var(--deep-brown);
-            outline: 2px solid var(--gold-accent);
         }
         .btn-secondary {
-            background: var(--forest-green);
+            background: linear-gradient(90deg, var(--forest-green), var(--gold-accent));
             color: var(--white);
         }
         .btn-secondary:hover, .btn-secondary:focus {
             background: var(--gold-accent);
             color: var(--deep-brown);
-            outline: 2px solid var(--gold-accent);
         }
         .btn-accent {
-            background: var(--gold-accent);
+            background: linear-gradient(90deg, var(--gold-accent), var(--ranch-red));
             color: var(--deep-brown);
         }
         .btn-accent:hover, .btn-accent:focus {
             background: var(--ranch-red);
             color: var(--white);
-            outline: 2px solid var(--ranch-red);
         }
         .card {
-            background: var(--secondary-bg);
-            border-radius: 16px;
-            box-shadow: 0 2px 16px rgba(75,61,42,0.07);
+            background: var(--feature-bg);
+            border: 2px solid var(--feature-border);
+            box-shadow: 0 4px 24px rgba(75,61,42,0.10);
             padding: 1.5rem;
-            border: 1.5px solid var(--gold-accent);
+            border-radius: 16px;
             color: var(--primary-text);
         }
         .section-divider {
@@ -145,14 +151,19 @@
         }
         /* Section backgrounds for alternation */
         .section-alt {
-            background: var(--section-alt-bg);
+            background: linear-gradient(135deg, var(--section-alt-bg) 80%, var(--gold-accent) 100%);
         }
         /* Gallery overlay fix */
         .gallery-overlay {
-            background: var(--overlay-dark) !important;
-            color: var(--gold-accent) !important;
+            background: var(--gallery-overlay-bg) !important;
+            color: var(--gallery-overlay-text) !important;
             padding: 1rem;
             border-radius: 0 0 8px 8px;
+            text-align: left;
+        }
+        .gallery-overlay h4, .gallery-overlay p {
+            color: var(--gallery-overlay-text) !important;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.25);
         }
         /* Hero overlay fix */
         .hero {
@@ -210,6 +221,230 @@
                 font-size: 4rem !important;
             }
         }
+        /* Header improvements */
+        header {
+            background: linear-gradient(90deg, var(--deep-brown) 60%, var(--ranch-red) 100%);
+            color: var(--white);
+            box-shadow: 0 2px 8px rgba(75,61,42,0.08);
+        }
+        .container.header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            gap: 2rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo-img-wrapper {
+            border: 2px solid var(--gold-accent);
+            border-radius: 12px;
+            padding: 4px;
+            margin-right: 1rem;
+            background: var(--white);
+        }
+        .logo-text h1 {
+            margin: 0;
+            color: var(--gold-accent);
+        }
+        .logo-tagline {
+            margin: 0;
+            color: var(--footer-link);
+            font-weight: 600;
+        }
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        nav a {
+            color: var(--white);
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+        }
+        nav a:hover, nav a:focus {
+            background: var(--gold-accent);
+            color: var(--deep-brown);
+        }
+        .mobile-menu {
+            display: none;
+        }
+        @media (max-width: 900px) {
+            .container.header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+            }
+            .mobile-menu {
+                display: inline-block;
+                margin-left: 1rem;
+            }
+        }
+        /* Color depth for sections */
+        .section-alt {
+            background: linear-gradient(135deg, var(--section-alt-bg) 80%, var(--gold-accent) 100%);
+        }
+        .card {
+            background: var(--feature-bg);
+            border: 2px solid var(--feature-border);
+            box-shadow: 0 4px 24px rgba(75,61,42,0.10);
+        }
+        .btn, .btn-primary, .btn-secondary, .btn-accent {
+            box-shadow: 0 2px 8px rgba(75,61,42,0.10);
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, var(--ranch-red), var(--gold-accent));
+            color: var(--white);
+        }
+        .btn-primary:hover, .btn-primary:focus {
+            background: var(--gold-accent);
+            color: var(--deep-brown);
+        }
+        .btn-secondary {
+            background: linear-gradient(90deg, var(--forest-green), var(--gold-accent));
+            color: var(--white);
+        }
+        .btn-secondary:hover, .btn-secondary:focus {
+            background: var(--gold-accent);
+            color: var(--deep-brown);
+        }
+        .btn-accent {
+            background: linear-gradient(90deg, var(--gold-accent), var(--ranch-red));
+            color: var(--deep-brown);
+        }
+        .btn-accent:hover, .btn-accent:focus {
+            background: var(--ranch-red);
+            color: var(--white);
+        }
+        /* Our Heritage features alignment */
+        .features {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .feature {
+            flex: 1 1 180px;
+            background: var(--feature-bg);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(75,61,42,0.07);
+            padding: 1rem;
+            border: 2px solid var(--feature-border);
+            text-align: center;
+            min-width: 160px;
+            max-width: 240px;
+            margin: 0 auto;
+        }
+        .feature i {
+            color: var(--gold-accent);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .feature h4 {
+            margin: 0.5rem 0;
+            color: var(--ranch-red);
+        }
+        .feature p {
+            margin: 0;
+            color: var(--deep-brown);
+        }
+        @media (max-width: 700px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            .feature {
+                max-width: 100%;
+                min-width: 0;
+            }
+        }
+        /* Footer redesign */
+        footer {
+            border-top: 4px solid var(--gold-accent);
+            background: var(--footer-red);
+            color: var(--footer-text);
+        }
+        .footer-content {
+            color: var(--footer-text);
+        }
+        .footer-column h3, .footer-column p, .footer-links a {
+            color: var(--footer-text);
+        }
+        .footer-links a {
+            color: var(--footer-link);
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: var(--footer-link-hover);
+        }
+        .footer-column input[type="email"] {
+            background: var(--white);
+            color: var(--deep-brown);
+            border: 1px solid var(--gold-accent);
+        }
+        .social-links a i {
+            color: var(--footer-icon) !important;
+            transition: color 0.2s;
+        }
+        .social-links a:hover i {
+            color: var(--footer-link-hover) !important;
+        }
+        .footer-bottom {
+            color: var(--footer-text);
+        }
+        /* General improvements */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-accent), transparent);
+            border-radius: 2px;
+            margin: 2rem 0 1.5rem 0;
+        }
+        @media (max-width: 900px) {
+            .footer-content, .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        /* Responsive font size improvements */
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2rem !important;
+            }
+            .card, .product-card, .service-card {
+                padding: 1rem !important;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem !important;
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-content h1 {
+                font-size: 4rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -225,18 +460,18 @@
     <button id="backToTop" aria-label="Back to top" class="btn btn-primary"><i class="fas fa-arrow-up" style="color: var(--gold-accent);"></i></button>
     <!-- Header -->
     <header id="header" role="banner">
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0;">
-            <div class="logo" style="display: flex; align-items: center;">
-                <div class="logo-img-wrapper" style="border: 2px solid var(--gold-accent); border-radius: 12px; padding: 4px; margin-right: 1rem;">
+        <div class="container header-flex">
+            <div class="logo">
+                <div class="logo-img-wrapper">
                     <img src="assets/LOGO.png.jpg" alt="BoksNBeef Logo" class="logo-img" width="64" height="64" loading="eager" fetchpriority="high">
                 </div>
                 <div class="logo-text">
-                    <h1 style="margin: 0;">Boks N' Beef</h1>
-                    <p class="logo-tagline" style="margin: 0; color: var(--ranch-red); font-weight: 600;">More Than Just Meat</p>
+                    <h1>Boks N' Beef</h1>
+                    <p class="logo-tagline">More Than Just Meat</p>
                 </div>
             </div>
             <nav role="navigation" aria-label="Main navigation">
-                <ul id="mainNav" style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+                <ul id="mainNav">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#cattle">Cattle</a></li>
                     <li><a href="#beef">Beef</a></li>
@@ -245,7 +480,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="mobile-menu btn btn-primary" aria-label="Open menu" aria-controls="mainNav" aria-expanded="false" style="margin-left: 1rem;"><i class="fas fa-bars" style="color: var(--gold-accent);"></i></button>
+                <button class="mobile-menu btn btn-primary" aria-label="Open menu" aria-controls="mainNav" aria-expanded="false"><i class="fas fa-bars" style="color: var(--gold-accent);"></i></button>
             </nav>
         </div>
     </header>
@@ -511,16 +746,16 @@
     <div class="section-divider"></div>
 
     <!-- Footer -->
-    <footer style="border-top: 4px solid var(--gold-accent); background: var(--primary-bg);">
+    <footer style="border-top: 4px solid var(--gold-accent); background: var(--footer-red);">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>BoksNBeef</h3>
                     <p>Premium cattle breeding and artisanal beef production. Excellence from pasture to plate.</p>
                     <div class="social-links" style="margin-top: 1rem;">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" style="color: var(--gold-accent); font-size: 1.5rem; margin-right: 0.5rem;"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" style="color: var(--gold-accent); font-size: 1.5rem; margin-right: 0.5rem;"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" style="color: var(--gold-accent); font-size: 1.5rem; margin-right: 0.5rem;"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" style="color: var(--footer-icon); font-size: 1.5rem; margin-right: 0.5rem;"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" style="color: var(--footer-icon); font-size: 1.5rem; margin-right: 0.5rem;"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" style="color: var(--footer-icon); font-size: 1.5rem; margin-right: 0.5rem;"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
