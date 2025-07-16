@@ -34,13 +34,15 @@
             --accent-cream: #FFF8F0;
             --black: #181818;
             --white: #FFFFFF;
-            --brand-green: var(--forest-green);
+            --brand-green: var(--forest-green); 
             --beef-red: var(--ranch-red);
             --gold: var(--gold-accent);
             --primary-bg: var(--warm-beige);
             --primary-text: var(--deep-brown);
             --secondary-bg: var(--accent-cream);
             --secondary-text: var(--ranch-red);
+            --section-alt-bg: #ede6d6; /* New: alternate section background */
+            --overlay-dark: rgba(75, 61, 42, 0.85); /* New: for overlays */
         }
         body {
             background: var(--primary-bg);
@@ -51,6 +53,11 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-ranch);
             color: var(--deep-brown);
+        }
+        .section-subtitle {
+            color: var(--ranch-red);
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         .btn, .btn-primary, .btn-secondary, .btn-accent {
             font-family: var(--font-ui);
@@ -63,36 +70,42 @@
             margin: 0.25rem;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 2px 8px rgba(75,61,42,0.07);
         }
         .btn-primary {
             background: var(--ranch-red);
             color: var(--white);
         }
-        .btn-primary:hover {
+        .btn-primary:hover, .btn-primary:focus {
             background: var(--gold-accent);
             color: var(--deep-brown);
+            outline: 2px solid var(--gold-accent);
         }
         .btn-secondary {
             background: var(--forest-green);
             color: var(--white);
         }
-        .btn-secondary:hover {
+        .btn-secondary:hover, .btn-secondary:focus {
             background: var(--gold-accent);
             color: var(--deep-brown);
+            outline: 2px solid var(--gold-accent);
         }
         .btn-accent {
             background: var(--gold-accent);
             color: var(--deep-brown);
         }
-        .btn-accent:hover {
+        .btn-accent:hover, .btn-accent:focus {
             background: var(--ranch-red);
             color: var(--white);
+            outline: 2px solid var(--ranch-red);
         }
         .card {
             background: var(--secondary-bg);
             border-radius: 16px;
             box-shadow: 0 2px 16px rgba(75,61,42,0.07);
             padding: 1.5rem;
+            border: 1.5px solid var(--gold-accent);
+            color: var(--primary-text);
         }
         .section-divider {
             height: 4px;
@@ -128,6 +141,73 @@
             .footer-content, .container {
                 flex-direction: column;
                 gap: 1rem;
+            }
+        }
+        /* Section backgrounds for alternation */
+        .section-alt {
+            background: var(--section-alt-bg);
+        }
+        /* Gallery overlay fix */
+        .gallery-overlay {
+            background: var(--overlay-dark) !important;
+            color: var(--gold-accent) !important;
+            padding: 1rem;
+            border-radius: 0 0 8px 8px;
+        }
+        /* Hero overlay fix */
+        .hero {
+            background: linear-gradient(135deg, rgba(75,61,42,0.97) 0%, rgba(198,93,59,0.90) 100%) !important;
+            color: var(--white) !important;
+        }
+        .hero-content h1, .hero-content p {
+            color: var(--white) !important;
+            text-shadow: 1px 1px 6px rgba(75,61,42,0.25);
+        }
+        /* Card text always deep brown for contrast */
+        .card h3, .card h4, .card p, .card .stat-label, .card .stat-value {
+            color: var(--deep-brown) !important;
+        }
+        /* About section image border fix */
+        .about-image {
+            border: 2px solid var(--gold-accent);
+            border-radius: 16px;
+            padding: 6px;
+            background: var(--secondary-bg);
+            box-shadow: 0 2px 16px rgba(75,61,42,0.07);
+        }
+        /* Newsletter input fix */
+        .footer-column input[type="email"] {
+            background: var(--white);
+            color: var(--deep-brown);
+            border: 1px solid var(--gold-accent);
+        }
+        /* Social icon hover */
+        .social-links a:hover i {
+            color: var(--ranch-red) !important;
+        }
+        /* Section subtitle fix */
+        .section-subtitle {
+            color: var(--ranch-red);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        /* Responsive font size improvements */
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2rem !important;
+            }
+            .card, .product-card, .service-card {
+                padding: 1rem !important;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem !important;
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-content h1 {
+                font-size: 4rem !important;
             }
         }
     </style>
@@ -171,10 +251,10 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home" style="padding: 4rem 0 2rem 0; background: linear-gradient(135deg, rgba(75,61,42,0.95) 0%, rgba(198,93,59,0.85) 100%); color: var(--white); text-align: center;">
+    <section class="hero" id="home" style="padding: 4rem 0 2rem 0;">
         <div class="hero-content">
-            <h1 style="font-size: 3rem; margin-bottom: 1rem;">Premium Cattle & Exceptional Beef</h1>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Breeding excellence in livestock and crafting the finest beef products</p>
+            <h1 style="margin-bottom: 1rem;">Premium Cattle & Exceptional Beef</h1>
+            <p style="margin-bottom: 2rem;">Breeding excellence in livestock and crafting the finest beef products</p>
             <div class="hero-btns">
                 <a href="#cattle" class="btn btn-primary">Explore Our Cattle</a>
                 <a href="#beef" class="btn btn-secondary">Discover Our Beef</a>
@@ -185,7 +265,7 @@
     <div class="section-divider"></div>
 
     <!-- Cattle Section -->
-    <section class="cattle" id="cattle">
+    <section class="cattle section-alt" id="cattle">
         <div class="container">
             <h2>Premium Cattle Selection</h2>
             <p class="section-subtitle">Top-quality breeding stock for your farm or ranch</p>
@@ -267,7 +347,7 @@
 
     <!-- Beef Products Section -->
     <section class="beef" id="beef">
-        <div class="container" style="background: var(--secondary-bg); border-radius: 18px; box-shadow: 0 2px 16px rgba(75,61,42,0.07); padding: 2rem 1rem;">
+        <div class="container section-alt" style="border-radius: 18px; box-shadow: 0 2px 16px rgba(75,61,42,0.07); padding: 2rem 1rem;">
             <h2>Artisanal Beef Products</h2>
             <p class="section-subtitle">Premium cuts from our ethically raised cattle</p>
             <div class="product-grid" style="display: flex; flex-wrap: wrap; gap: 2rem;">
@@ -307,7 +387,7 @@
     <div class="section-divider"></div>
 
     <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
+    <section class="gallery section-alt" id="gallery">
         <div class="section-divider"></div>
         <div class="container">
             <h2>Our Ranch & Products</h2>
@@ -362,8 +442,8 @@
     <div class="section-divider"></div>
 
     <!-- Services Section -->
-    <section class="services" id="services" style="background: var(--primary-bg); border-radius: 18px; margin-top: 2rem;">
-        <div class="container">
+    <section class="services" id="services" style="border-radius: 18px; margin-top: 2rem;">
+        <div class="container section-alt">
             <h2>Our Services</h2>
             <p class="section-subtitle">Comprehensive solutions for cattle farmers and beef enthusiasts</p>
             <div class="services-grid" style="display: flex; flex-wrap: wrap; gap: 2rem;">
@@ -395,7 +475,7 @@
     <div class="section-divider"></div>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section class="about section-alt" id="about">
         <div class="section-divider"></div>
         <div class="container" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
             <div class="about-content" style="flex: 2 1 350px;">
