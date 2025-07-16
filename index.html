@@ -453,6 +453,58 @@
                 font-size: 4rem !important;
             }
         }
+        nav {
+            position: relative;
+        }
+        .main-nav-list {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            transition: none;
+        }
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--white);
+            margin-right: 0.5rem;
+            cursor: pointer;
+        }
+        @media (max-width: 900px) {
+            .main-nav-list {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: auto;
+                background: var(--ranch-red);
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 200px;
+                padding: 1.2rem 0.5rem;
+                border-radius: 0 0 12px 12px;
+                box-shadow: 0 8px 24px rgba(75,61,42,0.13);
+                z-index: 1001;
+            }
+            .main-nav-list.open {
+                display: flex;
+            }
+            .mobile-menu-toggle {
+                display: inline-block;
+            }
+            .container.header-flex {
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+            }
+            .logo {
+                flex-shrink: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -471,7 +523,10 @@
                 </div>
             </div>
             <nav role="navigation" aria-label="Main navigation">
-                <ul id="mainNav">
+                <button class="mobile-menu-toggle" aria-label="Open menu" aria-controls="mainNav" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="mainNav" class="main-nav-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#cattle">Cattle</a></li>
                     <li><a href="#beef">Beef</a></li>
@@ -480,7 +535,6 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="mobile-menu btn btn-primary" aria-label="Open menu" aria-controls="mainNav" aria-expanded="false"><i class="fas fa-bars" style="color: var(--gold-accent);"></i></button>
             </nav>
         </div>
     </header>
@@ -796,5 +850,36 @@
         </div>
     </footer>
     <script src="scripts/main.js" defer></script>
+    <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.getElementById('mainNav');
+    let menuOpen = false;
+    function closeMenu() {
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuOpen = false;
+    }
+    function openMenu() {
+        mainNav.classList.add('open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        menuOpen = true;
+    }
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (menuOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+        document.addEventListener('click', function(e) {
+            if (menuOpen && !mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
+                closeMenu();
+            }
+        });
+    }
+    </script>
 </body>
 </html>
